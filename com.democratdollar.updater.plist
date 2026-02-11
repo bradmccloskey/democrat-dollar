@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.democratdollar.updater</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/bmccloskey/Projects/democrat-dollar/updater/run-update.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- Run every other Sunday at 3:00 AM -->
+        <dict>
+            <key>Weekday</key>
+            <integer>0</integer>
+            <key>Hour</key>
+            <integer>3</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/bmccloskey/.nvm/versions/node/v24.13.0/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/bmccloskey/Projects/democrat-dollar/updater/logs/launchd-stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/bmccloskey/Projects/democrat-dollar/updater/logs/launchd-stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
