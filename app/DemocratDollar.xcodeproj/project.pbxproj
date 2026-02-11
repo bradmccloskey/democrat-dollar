@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD0001AA2C0000000000 /* DemocratDollarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001A92C0000000000 /* DemocratDollarApp.swift */; };
+		DD0001AC2C0000000000 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001AB2C0000000000 /* ContentView.swift */; };
+		DD0001AE2C0000000000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0001AD2C0000000000 /* Assets.xcassets */; };
+		DD0001AF2C0000000000 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD0001AE2C0000000001 /* GoogleService-Info.plist */; };
+		DD0001B22C0000000000 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B12C0000000000 /* Company.swift */; };
+		DD0001B42C0000000000 /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B32C0000000000 /* CompanyViewModel.swift */; };
+		DD0001B62C0000000000 /* CompanyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B52C0000000000 /* CompanyListView.swift */; };
+		DD0001B82C0000000000 /* CompanyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B72C0000000000 /* CompanyRowView.swift */; };
+		DD0001BA2C0000000000 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B92C0000000000 /* CompanyDetailView.swift */; };
+		DD0001BC2C0000000000 /* PartisanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001BB2C0000000000 /* PartisanBar.swift */; };
+		DD0001BE2C0000000000 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001BD2C0000000000 /* AboutView.swift */; };
+		DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001BF2C0000000000 /* FirebaseFirestore */; };
+		DD0001D02C0000000000 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001CF2C0000000000 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DD0001A62C0000000000 /* DemocratDollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemocratDollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0001A92C0000000000 /* DemocratDollarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemocratDollarApp.swift; sourceTree = "<group>"; };
+		DD0001AB2C0000000000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD0001AD2C0000000000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD0001AE2C0000000001 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD0001B12C0000000000 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		DD0001B32C0000000000 /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
+		DD0001B52C0000000000 /* CompanyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListView.swift; sourceTree = "<group>"; };
+		DD0001B72C0000000000 /* CompanyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRowView.swift; sourceTree = "<group>"; };
+		DD0001B92C0000000000 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
+		DD0001BB2C0000000000 /* PartisanBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartisanBar.swift; sourceTree = "<group>"; };
+		DD0001BD2C0000000000 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD0001A32C0000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */,
+				DD0001D02C0000000000 /* FirebaseCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD00019D2C0000000000 = {
+			isa = PBXGroup;
+			children = (
+				DD0001A82C0000000000 /* DemocratDollar */,
+				DD0001A72C0000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD0001A72C0000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001A62C0000000000 /* DemocratDollar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD0001A82C0000000000 /* DemocratDollar */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001A92C0000000000 /* DemocratDollarApp.swift */,
+				DD0001AE2C0000000001 /* GoogleService-Info.plist */,
+				DD0001C12C0000000000 /* Models */,
+				DD0001C22C0000000000 /* ViewModels */,
+				DD0001C32C0000000000 /* Views */,
+				DD0001C42C0000000000 /* Resources */,
+			);
+			path = DemocratDollar;
+			sourceTree = "<group>";
+		};
+		DD0001C12C0000000000 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001B12C0000000000 /* Company.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD0001C22C0000000000 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001B32C0000000000 /* CompanyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DD0001C32C0000000000 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001AB2C0000000000 /* ContentView.swift */,
+				DD0001B52C0000000000 /* CompanyListView.swift */,
+				DD0001B72C0000000000 /* CompanyRowView.swift */,
+				DD0001B92C0000000000 /* CompanyDetailView.swift */,
+				DD0001BB2C0000000000 /* PartisanBar.swift */,
+				DD0001BD2C0000000000 /* AboutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD0001C42C0000000000 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD0001AD2C0000000000 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD0001A52C0000000000 /* DemocratDollar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0001CA2C0000000000 /* Build configuration list for PBXNativeTarget "DemocratDollar" */;
+			buildPhases = (
+				DD0001A22C0000000000 /* Sources */,
+				DD0001A32C0000000000 /* Frameworks */,
+				DD0001A42C0000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemocratDollar;
+			packageProductDependencies = (
+				DD0001BF2C0000000000 /* FirebaseFirestore */,
+				DD0001CF2C0000000000 /* FirebaseCore */,
+			);
+			productName = DemocratDollar;
+			productReference = DD0001A62C0000000000 /* DemocratDollar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD00019E2C0000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					DD0001A52C0000000000 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = DD0001A12C0000000000 /* Build configuration list for PBXProject "DemocratDollar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD00019D2C0000000000;
+			packageReferences = (
+				DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = DD0001A72C0000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD0001A52C0000000000 /* DemocratDollar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD0001A42C0000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0001AE2C0000000000 /* Assets.xcassets in Resources */,
+				DD0001AF2C0000000000 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD0001A22C0000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0001AC2C0000000000 /* ContentView.swift in Sources */,
+				DD0001B22C0000000000 /* Company.swift in Sources */,
+				DD0001B42C0000000000 /* CompanyViewModel.swift in Sources */,
+				DD0001B62C0000000000 /* CompanyListView.swift in Sources */,
+				DD0001B82C0000000000 /* CompanyRowView.swift in Sources */,
+				DD0001BA2C0000000000 /* CompanyDetailView.swift in Sources */,
+				DD0001BC2C0000000000 /* PartisanBar.swift in Sources */,
+				DD0001BE2C0000000000 /* AboutView.swift in Sources */,
+				DD0001AA2C0000000000 /* DemocratDollarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DD0001C82C0000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JJG6G52H47;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD0001C92C0000000000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JJG6G52H47;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD0001CB2C0000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DemocratDollar;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD0001CC2C0000000000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DemocratDollar;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD0001A12C0000000000 /* Build configuration list for PBXProject "DemocratDollar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0001C82C0000000000 /* Debug */,
+				DD0001C92C0000000000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0001CA2C0000000000 /* Build configuration list for PBXNativeTarget "DemocratDollar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0001CB2C0000000000 /* Debug */,
+				DD0001CC2C0000000000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD0001BF2C0000000000 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		DD0001CF2C0000000000 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DD00019E2C0000000000 /* Project object */;
+}
