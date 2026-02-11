@@ -1,0 +1,22 @@
+{
+  "name": "democrat-dollar-updater",
+  "version": "1.0.0",
+  "description": "FEC data pipeline for DemocratDollar app",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "update": "node src/index.js",
+    "test": "node src/index.js --dry-run",
+    "test-company": "node src/index.js --dry-run --company"
+  },
+  "keywords": ["fec", "political", "donations", "firebase"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "dotenv": "^16.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
