@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+updater/.env
+updater/firebase-service-account.json
+updater/service-account.json
+app/DemocratDollar/GoogleService-Info.plist
+
+# Logs
+updater/logs/*.log
+
+# Xcode
+app/DemocratDollar.xcodeproj/xcuserdata/
+app/DemocratDollar.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+
+# macOS
+.DS_Store
+*.swp
+*~
