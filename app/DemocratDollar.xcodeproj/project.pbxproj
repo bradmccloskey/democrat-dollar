@@ -18,6 +18,11 @@
 		DD0001BA2C0000000000 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001B92C0000000000 /* CompanyDetailView.swift */; };
 		DD0001BC2C0000000000 /* PartisanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001BB2C0000000000 /* PartisanBar.swift */; };
 		DD0001BE2C0000000000 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001BD2C0000000000 /* AboutView.swift */; };
+		DD0001D12C0000000000 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D22C0000000000 /* Candidate.swift */; };
+		DD0001D32C0000000000 /* CandidateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D42C0000000000 /* CandidateViewModel.swift */; };
+		DD0001D52C0000000000 /* CandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D62C0000000000 /* CandidateListView.swift */; };
+		DD0001D72C0000000000 /* CandidateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D82C0000000000 /* CandidateRowView.swift */; };
+		DD0001D92C0000000000 /* CandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001DA2C0000000000 /* CandidateDetailView.swift */; };
 		DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001BF2C0000000000 /* FirebaseFirestore */; };
 		DD0001D02C0000000000 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001CF2C0000000000 /* FirebaseCore */; };
 /* End PBXBuildFile section */
@@ -35,6 +40,11 @@
 		DD0001B92C0000000000 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
 		DD0001BB2C0000000000 /* PartisanBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartisanBar.swift; sourceTree = "<group>"; };
 		DD0001BD2C0000000000 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		DD0001D22C0000000000 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		DD0001D42C0000000000 /* CandidateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateViewModel.swift; sourceTree = "<group>"; };
+		DD0001D62C0000000000 /* CandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateListView.swift; sourceTree = "<group>"; };
+		DD0001D82C0000000000 /* CandidateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateRowView.swift; sourceTree = "<group>"; };
+		DD0001DA2C0000000000 /* CandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0001B12C0000000000 /* Company.swift */,
+				DD0001D22C0000000000 /* Candidate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0001B32C0000000000 /* CompanyViewModel.swift */,
+				DD0001D42C0000000000 /* CandidateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -102,6 +114,9 @@
 				DD0001B52C0000000000 /* CompanyListView.swift */,
 				DD0001B72C0000000000 /* CompanyRowView.swift */,
 				DD0001B92C0000000000 /* CompanyDetailView.swift */,
+				DD0001D62C0000000000 /* CandidateListView.swift */,
+				DD0001D82C0000000000 /* CandidateRowView.swift */,
+				DD0001DA2C0000000000 /* CandidateDetailView.swift */,
 				DD0001BB2C0000000000 /* PartisanBar.swift */,
 				DD0001BD2C0000000000 /* AboutView.swift */,
 			);
@@ -195,10 +210,15 @@
 			files = (
 				DD0001AC2C0000000000 /* ContentView.swift in Sources */,
 				DD0001B22C0000000000 /* Company.swift in Sources */,
+				DD0001D12C0000000000 /* Candidate.swift in Sources */,
 				DD0001B42C0000000000 /* CompanyViewModel.swift in Sources */,
+				DD0001D32C0000000000 /* CandidateViewModel.swift in Sources */,
 				DD0001B62C0000000000 /* CompanyListView.swift in Sources */,
 				DD0001B82C0000000000 /* CompanyRowView.swift in Sources */,
 				DD0001BA2C0000000000 /* CompanyDetailView.swift in Sources */,
+				DD0001D52C0000000000 /* CandidateListView.swift in Sources */,
+				DD0001D72C0000000000 /* CandidateRowView.swift in Sources */,
+				DD0001D92C0000000000 /* CandidateDetailView.swift in Sources */,
 				DD0001BC2C0000000000 /* PartisanBar.swift in Sources */,
 				DD0001BE2C0000000000 /* AboutView.swift in Sources */,
 				DD0001AA2C0000000000 /* DemocratDollarApp.swift in Sources */,

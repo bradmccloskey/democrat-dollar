@@ -164,6 +164,81 @@ async function updateMetadata(companyCount) {
 }
 
 /**
+ * Push all candidates to Firestore in batches
+ */
+export async function pushAllCandidates(candidates) {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  console.log(`\nPushing ${candidates.length} candidates to Firestore...`);
+
+  const BATCH_SIZE = 500;
+  let batch = db.batch();
+  let operationCount = 0;
+  let batchCount = 0;
+
+  for (const candidateData of candidates) {
+    const candidateId = slugify(candidateData.candidateId || candidateData.name);
+
+    const docData = {
+      ...candidateData,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+      slug: candidateId
+    };
+
+    const docRef = db.collection('candidates').doc(candidateId);
+    batch.set(docRef, docData);
+    operationCount++;
+
+    if (operationCount >= BATCH_SIZE) {
+      await batch.commit();
+      batchCount++;
+      console.log(`  Committed batch ${batchCount} (${operationCount} candidates)`);
+      batch = db.batch();
+      operationCount = 0;
+    }
+  }
+
+  if (operationCount > 0) {
+    await batch.commit();
+    batchCount++;
+    console.log(`  Committed final batch ${batchCount} (${operationCount} candidates)`);
+  }
+
+  console.log(`Successfully pushed ${candidates.length} candidates in ${batchCount} batch(es)`);
+
+  // Update metadata
+  await updateCandidateMetadata(candidates.length);
+
+  return candidates.length;
+}
+
+/**
+ * Update candidate metadata document
+ */
+async function updateCandidateMetadata(candidateCount) {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  try {
+    const metadataRef = db.collection('metadata').doc('candidateLastUpdate');
+
+    await metadataRef.set({
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+      candidateCount,
+      updatedAt: new Date().toISOString()
+    });
+
+    console.log('Candidate metadata updated successfully');
+  } catch (error) {
+    console.error('Failed to update candidate metadata:', error.message);
+    throw error;
+  }
+}
+
+/**
  * Clear all companies from Firestore (use with caution!)
  */
 export async function clearAllCompanies() {

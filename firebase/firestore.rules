@@ -8,6 +8,12 @@ service cloud.firestore {
       allow write: if false;  // Only Admin SDK (server-side) can write
     }
 
+    // Candidates collection - read-only for app users, write via Admin SDK only
+    match /candidates/{candidateId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     // Metadata collection - read-only for app users
     match /metadata/{docId} {
       allow read: if true;

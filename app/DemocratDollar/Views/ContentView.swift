@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var viewModel = CompanyViewModel()
+    @State private var candidateViewModel = CandidateViewModel()
 
     var body: some View {
         TabView {
@@ -38,6 +39,13 @@ struct ContentView: View {
             }
             .tabItem {
                 Label("All", systemImage: "list.bullet")
+            }
+
+            NavigationStack {
+                CandidateListView(viewModel: candidateViewModel)
+            }
+            .tabItem {
+                Label("Candidates", systemImage: "person.2.fill")
             }
 
             NavigationStack {

@@ -18,7 +18,7 @@ struct AboutView: View {
                         Spacer()
                     }
 
-                    Text("DemocratDollar helps you make informed purchasing decisions by showing how companies' Political Action Committees (PACs) distribute their donations between political parties.")
+                    Text("DemocratDollar helps you make informed purchasing decisions by showing how companies' Political Action Committees (PACs) distribute their donations between political parties. You can also browse candidates to see who is funding their campaigns.")
                         .font(.body)
                         .foregroundStyle(.secondary)
                 }
@@ -59,6 +59,26 @@ struct AboutView: View {
                 CategoryExplanationRow(
                     category: .mixed,
                     threshold: "45-55% split between parties"
+                )
+            }
+
+            Section("Candidate View") {
+                InfoRow(
+                    icon: "person.2.fill",
+                    title: "Browse Candidates",
+                    description: "See candidates running in Wake County, NC races and who is funding their campaigns."
+                )
+
+                InfoRow(
+                    icon: "dollarsign.arrow.circlepath",
+                    title: "Follow the Money",
+                    description: "View top donors — PACs, organizations, and individuals — for each candidate."
+                )
+
+                InfoRow(
+                    icon: "line.3.horizontal.decrease.circle",
+                    title: "Filter & Search",
+                    description: "Filter candidates by office (Senate, House) and party affiliation."
                 )
             }
 
