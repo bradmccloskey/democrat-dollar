@@ -59,19 +59,12 @@ class CandidateViewModel {
     private var listener: ListenerRegistration?
 
     init() {
-        setupFirestore()
         fetchCandidates()
         fetchMetadata()
     }
 
     deinit {
         listener?.remove()
-    }
-
-    private func setupFirestore() {
-        let settings = FirestoreSettings()
-        settings.cacheSettings = PersistentCacheSettings()
-        db.settings = settings
     }
 
     func fetchCandidates() {

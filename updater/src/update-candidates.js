@@ -71,15 +71,19 @@ async function main() {
 
   const results = [];
   let successCount = 0;
-  let errorCount = 0;
+  let skipCount = 0;
+  let fatalErrorCount = 0;
 
   for (const fecCandidate of fecCandidates) {
     try {
       const result = await processCandidate(fecCandidate);
       results.push(result);
 
-      if (result.error) {
-        errorCount++;
+      if (result.error === 'No committee found') {
+        // Expected for minor/inactive candidates — not a real error
+        skipCount++;
+      } else if (result.error) {
+        fatalErrorCount++;
       } else {
         successCount++;
       }
@@ -90,7 +94,7 @@ async function main() {
         break;
       }
       console.error(`  Error processing candidate:`, error.message);
-      errorCount++;
+      fatalErrorCount++;
     }
   }
 
@@ -102,7 +106,8 @@ async function main() {
   console.log('='.repeat(70));
   console.log(`Total candidates processed: ${results.length}`);
   console.log(`With data: ${validResults.length}`);
-  console.log(`Errors/no data: ${errorCount}`);
+  console.log(`Skipped (no committee): ${skipCount}`);
+  console.log(`Errors: ${fatalErrorCount}`);
 
   // Group by office
   const byOffice = {};
@@ -142,7 +147,7 @@ async function main() {
   console.log(`End time: ${new Date().toISOString()}`);
   console.log('='.repeat(70));
 
-  if (errorCount > 0) {
+  if (fatalErrorCount > 0) {
     process.exit(1);
   }
 }

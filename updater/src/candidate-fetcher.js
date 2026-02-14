@@ -118,22 +118,32 @@ async function searchFederalCandidates(office, district = null) {
 export async function fetchWakeCountyCandidates() {
   console.log('\nFetching Wake County NC candidates...');
   const allCandidates = [];
+  const seenIds = new Set();
+
+  function addUnique(candidates) {
+    for (const c of candidates) {
+      if (!seenIds.has(c.candidate_id)) {
+        seenIds.add(c.candidate_id);
+        allCandidates.push(c);
+      }
+    }
+  }
 
   // NC Senate candidates (statewide)
   console.log('  Searching NC Senate candidates...');
   const senateCandidates = await searchFederalCandidates('S');
   console.log(`    Found ${senateCandidates.length} Senate candidates`);
-  allCandidates.push(...senateCandidates);
+  addUnique(senateCandidates);
 
   // NC House candidates for Wake County districts
   for (const district of WAKE_COUNTY_DISTRICTS) {
     console.log(`  Searching NC House District ${district} candidates...`);
     const houseCandidates = await searchFederalCandidates('H', district);
     console.log(`    Found ${houseCandidates.length} House-${district} candidates`);
-    allCandidates.push(...houseCandidates);
+    addUnique(houseCandidates);
   }
 
-  console.log(`  Total federal candidates found: ${allCandidates.length}`);
+  console.log(`  Total unique federal candidates found: ${allCandidates.length}`);
   return allCandidates;
 }
 
@@ -410,11 +420,11 @@ function formatCandidateName(fecName) {
   const parts = fecName.split(',');
   if (parts.length < 2) {
     // No comma — already in a different format, just title case it
-    return titleCase(fecName.trim());
+    return titleCase(stripTitles(fecName.trim()));
   }
 
-  const lastName = parts[0].trim();
-  const firstMiddle = parts.slice(1).join(',').trim();
+  const lastName = stripTitles(parts[0].trim());
+  const firstMiddle = stripTitles(parts.slice(1).join(',').trim());
 
   // Remove suffixes like JR, SR, III, II, IV
   const suffixPattern = /\b(JR|SR|III|II|IV)\b\.?$/i;
@@ -423,6 +433,17 @@ function formatCandidateName(fecName) {
 
   const formatted = `${titleCase(cleanFirst)} ${titleCase(lastName)}${suffix ? ` ${suffix}` : ''}`;
   return formatted.trim();
+}
+
+/**
+ * Strip honorifics and titles from a name part.
+ * FEC data sometimes includes MR., MRS., MS., DR., HON., REV., etc.
+ */
+function stripTitles(namePart) {
+  return namePart
+    .replace(/\b(MR|MRS|MS|MISS|DR|HON|REV|SGT|CPT|MAJ|COL|GEN|SEN|REP)\.?\b/gi, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }
 
 function titleCase(str) {
