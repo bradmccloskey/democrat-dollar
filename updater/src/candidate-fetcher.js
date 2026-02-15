@@ -441,7 +441,7 @@ function formatCandidateName(fecName) {
  */
 function stripTitles(namePart) {
   return namePart
-    .replace(/\b(MR|MRS|MS|MISS|DR|HON|REV|SGT|CPT|MAJ|COL|GEN|SEN|REP)\.?\b/gi, '')
+    .replace(/\b(MR|MRS|MS|MISS|DR|HON|REV|SGT|CPT|MAJ|COL|GEN|SEN|REP)\b\.?\s*/gi, '')
     .replace(/\s{2,}/g, ' ')
     .trim();
 }
