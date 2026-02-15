@@ -5,8 +5,8 @@ import {
   getTrackedCompanies,
   searchCommittee,
   fetchDisbursements,
-  RateLimitExhaustedError
 } from './fec-client.js';
+import { RateLimitExhaustedError } from './fec-api.js';
 import {
   categorizeCompany,
   calculateAggregateStats,
@@ -145,8 +145,12 @@ async function main() {
   // Process all companies
   const results = [];
   let successCount = 0;
-  let errorCount = 0;
+  let noDataCount = 0;
+  let fatalErrorCount = 0;
   let rateLimitHit = false;
+
+  // Expected "no data" errors that don't indicate a real failure
+  const expectedErrors = ['No committee found', 'No disbursements found'];
 
   for (const companyName of companiesToProcess) {
     const result = await processCompany(companyName);
@@ -161,7 +165,11 @@ async function main() {
     }
 
     if (result.error) {
-      errorCount++;
+      if (expectedErrors.includes(result.error)) {
+        noDataCount++;
+      } else {
+        fatalErrorCount++;
+      }
     } else {
       successCount++;
     }
@@ -180,7 +188,8 @@ async function main() {
   console.log('='.repeat(70));
   console.log(`Total companies processed: ${results.length}`);
   console.log(`Successfully categorized: ${successCount}`);
-  console.log(`Errors: ${errorCount}`);
+  console.log(`No data available: ${noDataCount}`);
+  console.log(`Errors: ${fatalErrorCount}`);
   console.log();
   console.log('By Category:');
   console.log(`  Support (Democrat-friendly): ${stats.support}`);
@@ -227,11 +236,11 @@ async function main() {
   }
 
   // Print errors if any
-  if (errorCount > 0) {
+  if (fatalErrorCount > 0) {
     console.log('\n' + '='.repeat(70));
     console.log('ERRORS');
     console.log('='.repeat(70));
-    for (const result of results.filter(r => r.error)) {
+    for (const result of results.filter(r => r.error && !expectedErrors.includes(r.error))) {
       console.log(`  ${result.name}: ${result.error}`);
     }
   }
@@ -240,8 +249,8 @@ async function main() {
   console.log(`End time: ${new Date().toISOString()}`);
   console.log('='.repeat(70));
 
-  // Exit with error code if there were failures
-  if (errorCount > 0) {
+  // Exit with error code only for actual failures or rate limit exhaustion
+  if (fatalErrorCount > 0 || rateLimitHit) {
     process.exit(1);
   }
 }
