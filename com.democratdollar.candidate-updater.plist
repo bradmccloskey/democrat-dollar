@@ -9,7 +9,7 @@
     <array>
         <string>/bin/bash</string>
         <string>-c</string>
-        <string>cd /Users/claude/projects/democrat-dollar/updater &amp;&amp; source .env &amp;&amp; node src/update-candidates.js 2>&amp;1 | tee -a logs/candidate-update-$(date +%Y%m%d-%H%M%S).log</string>
+        <string>cd /Users/claude/projects/apps/democrat-dollar/updater &amp;&amp; source .env &amp;&amp; node src/update-candidates.js 2>&amp;1 | tee -a logs/candidate-update-$(date +%Y%m%d-%H%M%S).log</string>
     </array>
 
     <key>StartCalendarInterval</key>
@@ -32,10 +32,10 @@
     </dict>
 
     <key>StandardOutPath</key>
-    <string>/Users/claude/projects/democrat-dollar/updater/logs/candidate-launchd-stdout.log</string>
+    <string>/Users/claude/projects/apps/democrat-dollar/updater/logs/candidate-launchd-stdout.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/claude/projects/democrat-dollar/updater/logs/candidate-launchd-stderr.log</string>
+    <string>/Users/claude/projects/apps/democrat-dollar/updater/logs/candidate-launchd-stderr.log</string>
 
     <key>RunAtLoad</key>
     <false/>
