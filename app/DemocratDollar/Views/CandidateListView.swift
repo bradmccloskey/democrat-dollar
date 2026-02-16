@@ -19,8 +19,14 @@ struct CandidateListView: View {
                     systemImage: "exclamationmark.triangle",
                     description: Text(error)
                 )
-            } else if viewModel.filteredCandidates.isEmpty {
+            } else if viewModel.filteredCandidates.isEmpty && !viewModel.candidates.isEmpty {
                 ContentUnavailableView.search(text: viewModel.searchText)
+            } else if viewModel.candidates.isEmpty {
+                ContentUnavailableView(
+                    "No Candidates",
+                    systemImage: "person.2.slash",
+                    description: Text("No candidate data available for this selection.")
+                )
             } else {
                 // Filter chips
                 Section {
@@ -67,7 +73,7 @@ struct CandidateListView: View {
                 }
             }
         }
-        .navigationTitle("Candidates")
+        .navigationTitle(viewModel.stateCode != nil ? viewModel.stateDisplayName : (viewModel.officeCode == "P" ? "Presidential" : "Candidates"))
         .searchable(
             text: $viewModel.searchText,
             placement: .navigationBarDrawer(displayMode: .always),
@@ -118,34 +124,6 @@ struct CandidateListView: View {
         case .totalRaised: return "dollarsign.circle"
         case .office: return "building.columns"
         }
-    }
-}
-
-struct FilterChip: View {
-    let label: String
-    let isSelected: Bool
-    var activeColor: Color = .accentColor
-
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text(label)
-                .font(.caption)
-                .fontWeight(isSelected ? .semibold : .regular)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(
-                    Capsule()
-                        .fill(isSelected ? activeColor.opacity(0.15) : Color.secondary.opacity(0.1))
-                )
-                .foregroundStyle(isSelected ? activeColor : .secondary)
-                .overlay(
-                    Capsule()
-                        .strokeBorder(isSelected ? activeColor.opacity(0.4) : Color.clear, lineWidth: 1)
-                )
-        }
-        .buttonStyle(.plain)
     }
 }
 

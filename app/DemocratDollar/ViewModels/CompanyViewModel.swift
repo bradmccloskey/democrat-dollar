@@ -6,6 +6,7 @@ enum SortOption: String, CaseIterable {
     case name = "Name"
     case industry = "Industry"
     case partisanPercent = "Partisan %"
+    case fortune500Rank = "Fortune 500 Rank"
 }
 
 @Observable
@@ -13,6 +14,7 @@ class CompanyViewModel {
     var companies: [Company] = []
     var searchText: String = ""
     var sortOption: SortOption = .name
+    var industryFilter: String? = nil
     var isLoading: Bool = true
     var errorMessage: String?
     var lastUpdateDate: Date?
@@ -82,13 +84,24 @@ class CompanyViewModel {
         fetchMetadata()
     }
 
+    var availableIndustries: [String] {
+        Array(Set(companies.map(\.industry))).sorted()
+    }
+
     var filteredCompanies: [Company] {
-        let filtered = companies.filter { company in
-            if searchText.isEmpty {
-                return true
+        var filtered = companies
+
+        // Apply search filter
+        if !searchText.isEmpty {
+            filtered = filtered.filter { company in
+                company.name.localizedCaseInsensitiveContains(searchText) ||
+                company.industry.localizedCaseInsensitiveContains(searchText)
             }
-            return company.name.localizedCaseInsensitiveContains(searchText) ||
-                   company.industry.localizedCaseInsensitiveContains(searchText)
+        }
+
+        // Apply industry filter
+        if let industry = industryFilter {
+            filtered = filtered.filter { $0.industry == industry }
         }
 
         return sortCompanies(filtered)
@@ -106,6 +119,10 @@ class CompanyViewModel {
         sortCompanies(filteredCompanies.filter { $0.category == .mixed })
     }
 
+    var noPacCompanies: [Company] {
+        sortCompanies(filteredCompanies.filter { $0.category == .none })
+    }
+
     private func sortCompanies(_ companies: [Company]) -> [Company] {
         switch sortOption {
         case .name:
@@ -114,6 +131,10 @@ class CompanyViewModel {
             return companies.sorted { $0.industry < $1.industry }
         case .partisanPercent:
             return companies.sorted { $0.percentDemocrat > $1.percentDemocrat }
+        case .fortune500Rank:
+            return companies.sorted {
+                ($0.rank ?? Int.max) < ($1.rank ?? Int.max)
+            }
         }
     }
 }

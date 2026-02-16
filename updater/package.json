@@ -1,16 +1,17 @@
 {
   "name": "democrat-dollar-updater",
-  "version": "1.0.0",
-  "description": "FEC data pipeline for DemocratDollar app",
+  "version": "2.0.0",
+  "description": "FEC data pipeline for DemocratDollar app — Fortune 500 companies + nationwide candidates",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
     "update": "node src/index.js",
     "update-candidates": "node src/update-candidates.js",
-    "update-all": "node src/index.js && node src/update-candidates.js",
+    "update-all": "bash run-update.sh",
     "test": "node src/index.js --dry-run",
     "test-candidates": "node src/update-candidates.js --dry-run",
-    "test-company": "node src/index.js --dry-run --company"
+    "test-company": "node src/index.js --dry-run --company",
+    "send-notification": "node src/send-notification.js"
   },
   "keywords": ["fec", "political", "donations", "firebase"],
   "author": "",

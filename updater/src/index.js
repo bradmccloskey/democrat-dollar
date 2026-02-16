@@ -5,6 +5,7 @@ import {
   getTrackedCompanies,
   searchCommittee,
   fetchDisbursements,
+  getCompanyRank,
 } from './fec-client.js';
 import { RateLimitExhaustedError } from './fec-api.js';
 import {
@@ -36,6 +37,8 @@ async function processCompany(companyName) {
   console.log(`Processing: ${companyName}`);
   console.log('='.repeat(60));
 
+  const rank = getCompanyRank(companyName);
+
   try {
     // Step 1: Search for the committee
     const committee = await searchCommittee(companyName);
@@ -44,8 +47,18 @@ async function processCompany(companyName) {
       console.log(`  No committee found for ${companyName}`);
       return {
         name: companyName,
-        error: 'No committee found',
-        category: 'unknown'
+        category: 'none',
+        hasPac: false,
+        rank,
+        industry: (await import('./fec-client.js')).getCompanyIndustry(companyName),
+        totalDemocrat: 0,
+        totalRepublican: 0,
+        totalOther: 0,
+        totalContributions: 0,
+        percentDemocrat: 0,
+        percentRepublican: 0,
+        fecCommitteeIds: [],
+        disbursementCount: 0,
       };
     }
 
@@ -58,9 +71,18 @@ async function processCompany(companyName) {
       console.log(`  No disbursements found for ${companyName}`);
       return {
         name: companyName,
-        error: 'No disbursements found',
-        category: 'unknown',
-        fecCommitteeIds: [committee.committee_id]
+        category: 'none',
+        hasPac: true,
+        rank,
+        industry: (await import('./fec-client.js')).getCompanyIndustry(companyName),
+        totalDemocrat: 0,
+        totalRepublican: 0,
+        totalOther: 0,
+        totalContributions: 0,
+        percentDemocrat: 0,
+        percentRepublican: 0,
+        fecCommitteeIds: [committee.committee_id],
+        disbursementCount: 0,
       };
     }
 
@@ -70,6 +92,9 @@ async function processCompany(companyName) {
       disbursements,
       [committee.committee_id]
     );
+
+    // Add rank from Fortune 500 data
+    categorized.rank = rank;
 
     return categorized;
 
@@ -145,12 +170,9 @@ async function main() {
   // Process all companies
   const results = [];
   let successCount = 0;
-  let noDataCount = 0;
+  let noPacCount = 0;
   let fatalErrorCount = 0;
   let rateLimitHit = false;
-
-  // Expected "no data" errors that don't indicate a real failure
-  const expectedErrors = ['No committee found', 'No disbursements found'];
 
   for (const companyName of companiesToProcess) {
     const result = await processCompany(companyName);
@@ -165,22 +187,21 @@ async function main() {
     }
 
     if (result.error) {
-      if (expectedErrors.includes(result.error)) {
-        noDataCount++;
-      } else {
-        fatalErrorCount++;
-      }
+      fatalErrorCount++;
+    } else if (result.category === 'none') {
+      noPacCount++;
     } else {
       successCount++;
     }
   }
 
-  // Calculate statistics
-  const validResults = results.filter(r => !r.error && r.category !== 'unknown');
-  const stats = calculateAggregateStats(validResults);
+  // Include both categorized AND no-PAC companies in valid results
+  const validResults = results.filter(r => !r.error && r.category !== 'error');
+  const categorizedResults = validResults.filter(r => r.category !== 'none');
+  const stats = calculateAggregateStats(categorizedResults);
 
   // Sort companies
-  const sortedResults = sortCompanies(validResults);
+  const sortedResults = sortCompanies(categorizedResults);
 
   // Print summary
   console.log('\n' + '='.repeat(70));
@@ -188,7 +209,7 @@ async function main() {
   console.log('='.repeat(70));
   console.log(`Total companies processed: ${results.length}`);
   console.log(`Successfully categorized: ${successCount}`);
-  console.log(`No data available: ${noDataCount}`);
+  console.log(`No PAC / No data: ${noPacCount}`);
   console.log(`Errors: ${fatalErrorCount}`);
   console.log();
   console.log('By Category:');
@@ -219,7 +240,7 @@ async function main() {
     console.log(`  ${company.name}: ${company.percentRepublican.toFixed(1)}% REP ($${company.totalRepublican.toLocaleString()})`);
   }
 
-  // Push to Firebase
+  // Push to Firebase — include all valid results (categorized + no-PAC)
   if (!isDryRun && validResults.length > 0) {
     try {
       console.log('\n' + '='.repeat(70));
@@ -240,7 +261,7 @@ async function main() {
     console.log('\n' + '='.repeat(70));
     console.log('ERRORS');
     console.log('='.repeat(70));
-    for (const result of results.filter(r => r.error && !expectedErrors.includes(r.error))) {
+    for (const result of results.filter(r => r.error)) {
       console.log(`  ${result.name}: ${result.error}`);
     }
   }

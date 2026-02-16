@@ -92,6 +92,7 @@ export async function categorizeCompany(companyName, disbursements, committeeIds
     percentDemocrat: Math.round(percentDemocrat * 10) / 10,
     percentRepublican: Math.round(percentRepublican * 10) / 10,
     category,
+    hasPac: true,
     fecCommitteeIds: committeeIds,
     disbursementCount: disbursements.length
   };

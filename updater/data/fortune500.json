@@ -1,0 +1,5034 @@
+[
+  {
+    "name": "Walmart",
+    "rank": 1,
+    "searchTerms": [
+      "WALMART",
+      "WAL-MART"
+    ],
+    "committeeId": "C00093054",
+    "industry": "Retail"
+  },
+  {
+    "name": "Amazon",
+    "rank": 2,
+    "searchTerms": [
+      "AMAZON"
+    ],
+    "committeeId": "C00360354",
+    "industry": "Tech"
+  },
+  {
+    "name": "Apple",
+    "rank": 3,
+    "searchTerms": [
+      "APPLE INC"
+    ],
+    "committeeId": "C00563692",
+    "industry": "Tech"
+  },
+  {
+    "name": "UnitedHealth Group",
+    "rank": 4,
+    "searchTerms": [
+      "UNITEDHEALTH",
+      "UNITED HEALTH"
+    ],
+    "committeeId": "C00329110",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Berkshire Hathaway",
+    "rank": 5,
+    "searchTerms": [
+      "BERKSHIRE HATHAWAY"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "CVS Health",
+    "rank": 6,
+    "searchTerms": [
+      "CVS HEALTH",
+      "CVS CAREMARK"
+    ],
+    "committeeId": "C00267336",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "ExxonMobil",
+    "rank": 7,
+    "searchTerms": [
+      "EXXONMOBIL",
+      "EXXON MOBIL"
+    ],
+    "committeeId": "C00028076",
+    "industry": "Energy"
+  },
+  {
+    "name": "Alphabet",
+    "rank": 8,
+    "searchTerms": [
+      "GOOGLE",
+      "ALPHABET"
+    ],
+    "committeeId": "C00428623",
+    "industry": "Tech"
+  },
+  {
+    "name": "McKesson",
+    "rank": 9,
+    "searchTerms": [
+      "MCKESSON"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Cencora (AmerisourceBergen)",
+    "rank": 10,
+    "searchTerms": [
+      "AMERISOURCEBERGEN",
+      "CENCORA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Costco",
+    "rank": 11,
+    "searchTerms": [
+      "COSTCO"
+    ],
+    "committeeId": "C00333146",
+    "industry": "Retail"
+  },
+  {
+    "name": "JPMorgan Chase",
+    "rank": 12,
+    "searchTerms": [
+      "JPMORGAN",
+      "JP MORGAN",
+      "CHASE"
+    ],
+    "committeeId": "C00124487",
+    "industry": "Finance"
+  },
+  {
+    "name": "Cardinal Health",
+    "rank": 13,
+    "searchTerms": [
+      "CARDINAL HEALTH"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Chevron",
+    "rank": 14,
+    "searchTerms": [
+      "CHEVRON"
+    ],
+    "committeeId": "C00040279",
+    "industry": "Energy"
+  },
+  {
+    "name": "Microsoft",
+    "rank": 15,
+    "searchTerms": [
+      "MICROSOFT"
+    ],
+    "committeeId": "C00227546",
+    "industry": "Tech"
+  },
+  {
+    "name": "Marathon Petroleum",
+    "rank": 16,
+    "searchTerms": [
+      "MARATHON PETROLEUM"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Elevance Health (Anthem)",
+    "rank": 17,
+    "searchTerms": [
+      "ELEVANCE HEALTH",
+      "ANTHEM"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Phillips 66",
+    "rank": 18,
+    "searchTerms": [
+      "PHILLIPS 66"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Valero Energy",
+    "rank": 19,
+    "searchTerms": [
+      "VALERO ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Cigna",
+    "rank": 20,
+    "searchTerms": [
+      "CIGNA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Ford Motor",
+    "rank": 21,
+    "searchTerms": [
+      "FORD MOTOR"
+    ],
+    "committeeId": "C00004127",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Bank of America",
+    "rank": 22,
+    "searchTerms": [
+      "BANK OF AMERICA"
+    ],
+    "committeeId": "C00035154",
+    "industry": "Finance"
+  },
+  {
+    "name": "General Motors",
+    "rank": 23,
+    "searchTerms": [
+      "GENERAL MOTORS",
+      "GM "
+    ],
+    "committeeId": "C00053587",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Centene",
+    "rank": 24,
+    "searchTerms": [
+      "CENTENE"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "The Kroger Co.",
+    "rank": 25,
+    "searchTerms": [
+      "KROGER"
+    ],
+    "committeeId": "C00049478",
+    "industry": "Retail"
+  },
+  {
+    "name": "Verizon",
+    "rank": 26,
+    "searchTerms": [
+      "VERIZON"
+    ],
+    "committeeId": "C00213876",
+    "industry": "Telecom"
+  },
+  {
+    "name": "Meta",
+    "rank": 27,
+    "searchTerms": [
+      "META",
+      "FACEBOOK"
+    ],
+    "committeeId": "C00502906",
+    "industry": "Tech"
+  },
+  {
+    "name": "AT&T",
+    "rank": 28,
+    "searchTerms": [
+      "AT&T",
+      "ATT INC"
+    ],
+    "committeeId": "C00109017",
+    "industry": "Telecom"
+  },
+  {
+    "name": "Fannie Mae",
+    "rank": 29,
+    "searchTerms": [
+      "FANNIE MAE"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Humana",
+    "rank": 30,
+    "searchTerms": [
+      "HUMANA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Tesla",
+    "rank": 31,
+    "searchTerms": [
+      "TESLA"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Archer Daniels Midland",
+    "rank": 32,
+    "searchTerms": [
+      "ARCHER DANIELS MIDLAND",
+      "ADM"
+    ],
+    "committeeId": null,
+    "industry": "Agriculture"
+  },
+  {
+    "name": "Walgreens Boots Alliance",
+    "rank": 33,
+    "searchTerms": [
+      "WALGREENS",
+      "WALGREEN"
+    ],
+    "committeeId": "C00186759",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Energy Transfer",
+    "rank": 34,
+    "searchTerms": [
+      "ENERGY TRANSFER"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Comcast",
+    "rank": 35,
+    "searchTerms": [
+      "COMCAST",
+      "NBCUNIVERSAL"
+    ],
+    "committeeId": "C00248716",
+    "industry": "Telecom"
+  },
+  {
+    "name": "Dell Technologies",
+    "rank": 36,
+    "searchTerms": [
+      "DELL TECHNOLOGIES",
+      "DELL INC"
+    ],
+    "committeeId": "C00372599",
+    "industry": "Tech"
+  },
+  {
+    "name": "Cigna Group",
+    "rank": 37,
+    "searchTerms": [
+      "CIGNA GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Target",
+    "rank": 38,
+    "searchTerms": [
+      "TARGET CORPORATION"
+    ],
+    "committeeId": "C00117499",
+    "industry": "Retail"
+  },
+  {
+    "name": "Johnson & Johnson",
+    "rank": 39,
+    "searchTerms": [
+      "JOHNSON & JOHNSON",
+      "JOHNSON AND JOHNSON"
+    ],
+    "committeeId": "C00140715",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "FedEx",
+    "rank": 40,
+    "searchTerms": [
+      "FEDEX"
+    ],
+    "committeeId": "C00238279",
+    "industry": "Logistics"
+  },
+  {
+    "name": "UPS",
+    "rank": 41,
+    "searchTerms": [
+      "UNITED PARCEL SERVICE",
+      "UPS "
+    ],
+    "committeeId": "C00082917",
+    "industry": "Logistics"
+  },
+  {
+    "name": "Lowe's",
+    "rank": 42,
+    "searchTerms": [
+      "LOWES",
+      "LOWE'S"
+    ],
+    "committeeId": "C00284877",
+    "industry": "Retail"
+  },
+  {
+    "name": "Home Depot",
+    "rank": 43,
+    "searchTerms": [
+      "HOME DEPOT"
+    ],
+    "committeeId": "C00284885",
+    "industry": "Retail"
+  },
+  {
+    "name": "State Farm",
+    "rank": 44,
+    "searchTerms": [
+      "STATE FARM"
+    ],
+    "committeeId": "C00087593",
+    "industry": "Insurance"
+  },
+  {
+    "name": "Albertsons",
+    "rank": 45,
+    "searchTerms": [
+      "ALBERTSONS"
+    ],
+    "committeeId": "C00036673",
+    "industry": "Retail"
+  },
+  {
+    "name": "Morgan Stanley",
+    "rank": 46,
+    "searchTerms": [
+      "MORGAN STANLEY"
+    ],
+    "committeeId": "C00182337",
+    "industry": "Finance"
+  },
+  {
+    "name": "Sysco",
+    "rank": 47,
+    "searchTerms": [
+      "SYSCO"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Pfizer",
+    "rank": 48,
+    "searchTerms": [
+      "PFIZER"
+    ],
+    "committeeId": "C00016683",
+    "industry": "Pharma"
+  },
+  {
+    "name": "Wells Fargo",
+    "rank": 49,
+    "searchTerms": [
+      "WELLS FARGO"
+    ],
+    "committeeId": "C00127902",
+    "industry": "Finance"
+  },
+  {
+    "name": "Freddie Mac",
+    "rank": 50,
+    "searchTerms": [
+      "FREDDIE MAC"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Citigroup",
+    "rank": 51,
+    "searchTerms": [
+      "CITIGROUP",
+      "CITICORP"
+    ],
+    "committeeId": "C00141192",
+    "industry": "Finance"
+  },
+  {
+    "name": "PBF Energy",
+    "rank": 52,
+    "searchTerms": [
+      "PBF ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "AbbVie",
+    "rank": 53,
+    "searchTerms": [
+      "ABBVIE"
+    ],
+    "committeeId": "C00507095",
+    "industry": "Pharma"
+  },
+  {
+    "name": "Procter & Gamble",
+    "rank": 54,
+    "searchTerms": [
+      "PROCTER & GAMBLE",
+      "PROCTER AND GAMBLE",
+      "P&G"
+    ],
+    "committeeId": "C00042366",
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "World Kinect",
+    "rank": 55,
+    "searchTerms": [
+      "WORLD KINECT",
+      "WORLD FUEL SERVICES"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Lockheed Martin",
+    "rank": 56,
+    "searchTerms": [
+      "LOCKHEED MARTIN"
+    ],
+    "committeeId": "C00303024",
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Walt Disney",
+    "rank": 57,
+    "searchTerms": [
+      "DISNEY",
+      "WALT DISNEY"
+    ],
+    "committeeId": "C00230987",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "RTX (Raytheon)",
+    "rank": 58,
+    "searchTerms": [
+      "RAYTHEON",
+      "RTX CORPORATION"
+    ],
+    "committeeId": "C00089243",
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "HCA Healthcare",
+    "rank": 59,
+    "searchTerms": [
+      "HCA HEALTHCARE"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Boeing",
+    "rank": 60,
+    "searchTerms": [
+      "BOEING"
+    ],
+    "committeeId": "C00082115",
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Merck",
+    "rank": 61,
+    "searchTerms": [
+      "MERCK & CO",
+      "MERCK AND CO"
+    ],
+    "committeeId": "C00029488",
+    "industry": "Pharma"
+  },
+  {
+    "name": "MetLife",
+    "rank": 62,
+    "searchTerms": [
+      "METLIFE"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Liberty Mutual",
+    "rank": 63,
+    "searchTerms": [
+      "LIBERTY MUTUAL"
+    ],
+    "committeeId": "C00100941",
+    "industry": "Insurance"
+  },
+  {
+    "name": "Goldman Sachs",
+    "rank": 64,
+    "searchTerms": [
+      "GOLDMAN SACHS"
+    ],
+    "committeeId": "C00142711",
+    "industry": "Finance"
+  },
+  {
+    "name": "Intel",
+    "rank": 65,
+    "searchTerms": [
+      "INTEL CORPORATION"
+    ],
+    "committeeId": "C00119453",
+    "industry": "Tech"
+  },
+  {
+    "name": "Caterpillar",
+    "rank": 66,
+    "searchTerms": [
+      "CATERPILLAR"
+    ],
+    "committeeId": "C00115436",
+    "industry": "Industrial"
+  },
+  {
+    "name": "ConocoPhillips",
+    "rank": 67,
+    "searchTerms": [
+      "CONOCOPHILLIPS"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Nationwide",
+    "rank": 68,
+    "searchTerms": [
+      "NATIONWIDE"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "StoneX Group",
+    "rank": 69,
+    "searchTerms": [
+      "STONEX GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "TJX Companies",
+    "rank": 70,
+    "searchTerms": [
+      "TJX COMPANIES"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "PepsiCo",
+    "rank": 71,
+    "searchTerms": [
+      "PEPSICO",
+      "PEPSI-COLA"
+    ],
+    "committeeId": "C00093971",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "American Express",
+    "rank": 72,
+    "searchTerms": [
+      "AMERICAN EXPRESS"
+    ],
+    "committeeId": "C00034033",
+    "industry": "Finance"
+  },
+  {
+    "name": "AIG",
+    "rank": 73,
+    "searchTerms": [
+      "AMERICAN INTERNATIONAL GROUP",
+      "AIG"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Progressive",
+    "rank": 74,
+    "searchTerms": [
+      "PROGRESSIVE CORPORATION",
+      "PROGRESSIVE INSURANCE"
+    ],
+    "committeeId": "C00284687",
+    "industry": "Insurance"
+  },
+  {
+    "name": "Dollar General",
+    "rank": 75,
+    "searchTerms": [
+      "DOLLAR GENERAL"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Allstate",
+    "rank": 76,
+    "searchTerms": [
+      "ALLSTATE"
+    ],
+    "committeeId": "C00032466",
+    "industry": "Insurance"
+  },
+  {
+    "name": "HP",
+    "rank": 77,
+    "searchTerms": [
+      "HEWLETT PACKARD",
+      "HP INC"
+    ],
+    "committeeId": "C00122960",
+    "industry": "Tech"
+  },
+  {
+    "name": "New York Life",
+    "rank": 78,
+    "searchTerms": [
+      "NEW YORK LIFE"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Deere & Company",
+    "rank": 79,
+    "searchTerms": [
+      "DEERE & COMPANY",
+      "JOHN DEERE"
+    ],
+    "committeeId": "C00048991",
+    "industry": "Industrial"
+  },
+  {
+    "name": "Coca-Cola",
+    "rank": 80,
+    "searchTerms": [
+      "COCA-COLA",
+      "COCA COLA"
+    ],
+    "committeeId": "C00163527",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Capital One",
+    "rank": 81,
+    "searchTerms": [
+      "CAPITAL ONE"
+    ],
+    "committeeId": "C00379818",
+    "industry": "Finance"
+  },
+  {
+    "name": "General Dynamics",
+    "rank": 82,
+    "searchTerms": [
+      "GENERAL DYNAMICS"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Enterprise Products Partners",
+    "rank": 83,
+    "searchTerms": [
+      "ENTERPRISE PRODUCTS PARTNERS"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "TIAA",
+    "rank": 84,
+    "searchTerms": [
+      "TIAA"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Publix Super Markets",
+    "rank": 85,
+    "searchTerms": [
+      "PUBLIX SUPER MARKETS"
+    ],
+    "committeeId": "C00206052",
+    "industry": "Retail"
+  },
+  {
+    "name": "Northwestern Mutual",
+    "rank": 86,
+    "searchTerms": [
+      "NORTHWESTERN MUTUAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Mass Mutual",
+    "rank": 87,
+    "searchTerms": [
+      "MASSACHUSETTS MUTUAL",
+      "MASS MUTUAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Northrop Grumman",
+    "rank": 88,
+    "searchTerms": [
+      "NORTHROP GRUMMAN"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Bristol-Myers Squibb",
+    "rank": 89,
+    "searchTerms": [
+      "BRISTOL-MYERS SQUIBB",
+      "BRISTOL MYERS"
+    ],
+    "committeeId": "C00146506",
+    "industry": "Pharma"
+  },
+  {
+    "name": "American Airlines",
+    "rank": 90,
+    "searchTerms": [
+      "AMERICAN AIRLINES"
+    ],
+    "committeeId": "C00037036",
+    "industry": "Transportation"
+  },
+  {
+    "name": "Eli Lilly",
+    "rank": 91,
+    "searchTerms": [
+      "ELI LILLY",
+      "LILLY & COMPANY"
+    ],
+    "committeeId": "C00027961",
+    "industry": "Pharma"
+  },
+  {
+    "name": "Prudential Financial",
+    "rank": 92,
+    "searchTerms": [
+      "PRUDENTIAL FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "GE HealthCare",
+    "rank": 93,
+    "searchTerms": [
+      "GE HEALTHCARE"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Charter Communications",
+    "rank": 94,
+    "searchTerms": [
+      "CHARTER COMMUNICATIONS",
+      "SPECTRUM"
+    ],
+    "committeeId": "C00464065",
+    "industry": "Telecom"
+  },
+  {
+    "name": "USAA",
+    "rank": 95,
+    "searchTerms": [
+      "USAA"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Performance Food Group",
+    "rank": 96,
+    "searchTerms": [
+      "PERFORMANCE FOOD GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Plains GP Holdings",
+    "rank": 97,
+    "searchTerms": [
+      "PLAINS GP HOLDINGS"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "General Electric",
+    "rank": 98,
+    "searchTerms": [
+      "GENERAL ELECTRIC",
+      "GE "
+    ],
+    "committeeId": "C00024869",
+    "industry": "Industrial"
+  },
+  {
+    "name": "Dow",
+    "rank": 99,
+    "searchTerms": [
+      "DOW INC",
+      "DOW CHEMICAL"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Pacific Life",
+    "rank": 100,
+    "searchTerms": [
+      "PACIFIC LIFE"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "CoreCivic",
+    "rank": 101,
+    "searchTerms": [
+      "CORECIVIC"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Delta Air Lines",
+    "rank": 102,
+    "searchTerms": [
+      "DELTA AIR LINES"
+    ],
+    "committeeId": "C00047449",
+    "industry": "Transportation"
+  },
+  {
+    "name": "Best Buy",
+    "rank": 103,
+    "searchTerms": [
+      "BEST BUY"
+    ],
+    "committeeId": "C00361071",
+    "industry": "Retail"
+  },
+  {
+    "name": "Phillips 66 Partners",
+    "rank": 104,
+    "searchTerms": [
+      "PHILLIPS 66 PARTNERS"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Visa",
+    "rank": 105,
+    "searchTerms": [
+      "VISA INC",
+      "VISA USA"
+    ],
+    "committeeId": "C00343905",
+    "industry": "Finance"
+  },
+  {
+    "name": "Nucor",
+    "rank": 106,
+    "searchTerms": [
+      "NUCOR"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "CHS",
+    "rank": 107,
+    "searchTerms": [
+      "CHS INC"
+    ],
+    "committeeId": null,
+    "industry": "Agriculture"
+  },
+  {
+    "name": "Nike",
+    "rank": 108,
+    "searchTerms": [
+      "NIKE"
+    ],
+    "committeeId": "C00467902",
+    "industry": "Retail"
+  },
+  {
+    "name": "Travelers",
+    "rank": 109,
+    "searchTerms": [
+      "TRAVELERS"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "United Airlines",
+    "rank": 110,
+    "searchTerms": [
+      "UNITED AIRLINES",
+      "UNITED AIR LINES"
+    ],
+    "committeeId": "C00056960",
+    "industry": "Transportation"
+  },
+  {
+    "name": "Thermo Fisher Scientific",
+    "rank": 111,
+    "searchTerms": [
+      "THERMO FISHER SCIENTIFIC"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Jabil",
+    "rank": 112,
+    "searchTerms": [
+      "JABIL"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Abbott Laboratories",
+    "rank": 113,
+    "searchTerms": [
+      "ABBOTT LABORATORIES"
+    ],
+    "committeeId": "C00034173",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Cisco",
+    "rank": 114,
+    "searchTerms": [
+      "CISCO SYSTEMS"
+    ],
+    "committeeId": "C00311381",
+    "industry": "Tech"
+  },
+  {
+    "name": "Mondelez International",
+    "rank": 115,
+    "searchTerms": [
+      "MONDELEZ INTERNATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "United Natural Foods",
+    "rank": 116,
+    "searchTerms": [
+      "UNITED NATURAL FOODS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Oracle",
+    "rank": 117,
+    "searchTerms": [
+      "ORACLE CORPORATION",
+      "ORACLE AMERICA"
+    ],
+    "committeeId": "C00321968",
+    "industry": "Tech"
+  },
+  {
+    "name": "Mastercard",
+    "rank": 118,
+    "searchTerms": [
+      "MASTERCARD"
+    ],
+    "committeeId": "C00330116",
+    "industry": "Finance"
+  },
+  {
+    "name": "US Foods",
+    "rank": 119,
+    "searchTerms": [
+      "US FOODS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Tyson Foods",
+    "rank": 120,
+    "searchTerms": [
+      "TYSON FOODS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Starbucks",
+    "rank": 121,
+    "searchTerms": [
+      "STARBUCKS"
+    ],
+    "committeeId": "C00496935",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Honeywell",
+    "rank": 122,
+    "searchTerms": [
+      "HONEYWELL"
+    ],
+    "committeeId": "C00112045",
+    "industry": "Industrial"
+  },
+  {
+    "name": "3M",
+    "rank": 123,
+    "searchTerms": [
+      "3M COMPANY",
+      "3M "
+    ],
+    "committeeId": "C00112052",
+    "industry": "Industrial"
+  },
+  {
+    "name": "TD Synnex",
+    "rank": 124,
+    "searchTerms": [
+      "TD SYNNEX"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Qualcomm",
+    "rank": 125,
+    "searchTerms": [
+      "QUALCOMM"
+    ],
+    "committeeId": "C00206052",
+    "industry": "Tech"
+  },
+  {
+    "name": "Freeport-McMoRan",
+    "rank": 126,
+    "searchTerms": [
+      "FREEPORT-MCMORAN"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Molina Healthcare",
+    "rank": 127,
+    "searchTerms": [
+      "MOLINA HEALTHCARE"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Hartford Financial Services",
+    "rank": 128,
+    "searchTerms": [
+      "HARTFORD FINANCIAL",
+      "THE HARTFORD"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Broadcom",
+    "rank": 129,
+    "searchTerms": [
+      "BROADCOM"
+    ],
+    "committeeId": "C00467704",
+    "industry": "Tech"
+  },
+  {
+    "name": "Paramount Global",
+    "rank": 130,
+    "searchTerms": [
+      "VIACOMCBS",
+      "PARAMOUNT GLOBAL"
+    ],
+    "committeeId": "C00294421",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "McDonald's",
+    "rank": 131,
+    "searchTerms": [
+      "MCDONALD",
+      "MCDONALDS"
+    ],
+    "committeeId": "C00343079",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Exelon",
+    "rank": 132,
+    "searchTerms": [
+      "EXELON"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Prologis",
+    "rank": 133,
+    "searchTerms": [
+      "PROLOGIS"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Rite Aid",
+    "rank": 134,
+    "searchTerms": [
+      "RITE AID"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "NextEra Energy",
+    "rank": 135,
+    "searchTerms": [
+      "NEXTERA ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Aflac",
+    "rank": 136,
+    "searchTerms": [
+      "AFLAC"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Kohl's",
+    "rank": 137,
+    "searchTerms": [
+      "KOHLS",
+      "KOHL'S"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "AECOM",
+    "rank": 138,
+    "searchTerms": [
+      "AECOM"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Arrow Electronics",
+    "rank": 139,
+    "searchTerms": [
+      "ARROW ELECTRONICS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Occidental Petroleum",
+    "rank": 140,
+    "searchTerms": [
+      "OCCIDENTAL PETROLEUM"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "GEICO",
+    "rank": 142,
+    "searchTerms": [
+      "GEICO",
+      "GOVERNMENT EMPLOYEES INSURANCE"
+    ],
+    "committeeId": "C00247312",
+    "industry": "Insurance"
+  },
+  {
+    "name": "Genuine Parts",
+    "rank": 143,
+    "searchTerms": [
+      "GENUINE PARTS"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Duke Energy",
+    "rank": 144,
+    "searchTerms": [
+      "DUKE ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Yum! Brands",
+    "rank": 145,
+    "searchTerms": [
+      "YUM! BRANDS",
+      "YUM BRANDS"
+    ],
+    "committeeId": "C00418624",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Coca-Cola Consolidated",
+    "rank": 146,
+    "searchTerms": [
+      "COCA-COLA CONSOLIDATED"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Southern Company",
+    "rank": 147,
+    "searchTerms": [
+      "SOUTHERN COMPANY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "CDW",
+    "rank": 148,
+    "searchTerms": [
+      "CDW"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "AutoNation",
+    "rank": 149,
+    "searchTerms": [
+      "AUTONATION"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "American Tower",
+    "rank": 150,
+    "searchTerms": [
+      "AMERICAN TOWER"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Gilead Sciences",
+    "rank": 151,
+    "searchTerms": [
+      "GILEAD SCIENCES"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Nvidia",
+    "rank": 152,
+    "searchTerms": [
+      "NVIDIA"
+    ],
+    "committeeId": "C00438192",
+    "industry": "Tech"
+  },
+  {
+    "name": "Cheniere Energy",
+    "rank": 153,
+    "searchTerms": [
+      "CHENIERE ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "T-Mobile",
+    "rank": 154,
+    "searchTerms": [
+      "T-MOBILE"
+    ],
+    "committeeId": "C00461830",
+    "industry": "Telecom"
+  },
+  {
+    "name": "Dollar Tree",
+    "rank": 155,
+    "searchTerms": [
+      "DOLLAR TREE"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Amgen",
+    "rank": 156,
+    "searchTerms": [
+      "AMGEN"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "L3Harris Technologies",
+    "rank": 157,
+    "searchTerms": [
+      "L3HARRIS TECHNOLOGIES"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Republic Services",
+    "rank": 158,
+    "searchTerms": [
+      "REPUBLIC SERVICES"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Marriott International",
+    "rank": 159,
+    "searchTerms": [
+      "MARRIOTT INTERNATIONAL"
+    ],
+    "committeeId": "C00247981",
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Brookdale Senior Living",
+    "rank": 160,
+    "searchTerms": [
+      "BROOKDALE SENIOR LIVING"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Ross Stores",
+    "rank": 161,
+    "searchTerms": [
+      "ROSS STORES"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Baker Hughes",
+    "rank": 162,
+    "searchTerms": [
+      "BAKER HUGHES"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Jacobs Solutions",
+    "rank": 163,
+    "searchTerms": [
+      "JACOBS SOLUTIONS",
+      "JACOBS ENGINEERING"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Waste Management",
+    "rank": 164,
+    "searchTerms": [
+      "WASTE MANAGEMENT"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "DTE Energy",
+    "rank": 165,
+    "searchTerms": [
+      "DTE ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Emerson Electric",
+    "rank": 166,
+    "searchTerms": [
+      "EMERSON ELECTRIC"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Constellation Energy",
+    "rank": 167,
+    "searchTerms": [
+      "CONSTELLATION ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "ManpowerGroup",
+    "rank": 168,
+    "searchTerms": [
+      "MANPOWERGROUP"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Ecolab",
+    "rank": 169,
+    "searchTerms": [
+      "ECOLAB"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "PayPal",
+    "rank": 170,
+    "searchTerms": [
+      "PAYPAL"
+    ],
+    "committeeId": "C00462762",
+    "industry": "Tech"
+  },
+  {
+    "name": "Fiserv",
+    "rank": 171,
+    "searchTerms": [
+      "FISERV"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Synchrony Financial",
+    "rank": 172,
+    "searchTerms": [
+      "SYNCHRONY FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Salesforce",
+    "rank": 173,
+    "searchTerms": [
+      "SALESFORCE"
+    ],
+    "committeeId": "C00519355",
+    "industry": "Tech"
+  },
+  {
+    "name": "CarMax",
+    "rank": 174,
+    "searchTerms": [
+      "CARMAX"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "LKQ",
+    "rank": 175,
+    "searchTerms": [
+      "LKQ"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Ingram Micro",
+    "rank": 176,
+    "searchTerms": [
+      "INGRAM MICRO"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Community Health Systems",
+    "rank": 177,
+    "searchTerms": [
+      "COMMUNITY HEALTH SYSTEMS"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Halliburton",
+    "rank": 178,
+    "searchTerms": [
+      "HALLIBURTON"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Textron",
+    "rank": 179,
+    "searchTerms": [
+      "TEXTRON"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "PPG Industries",
+    "rank": 180,
+    "searchTerms": [
+      "PPG INDUSTRIES"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Parker Hannifin",
+    "rank": 181,
+    "searchTerms": [
+      "PARKER HANNIFIN"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Conagra Brands",
+    "rank": 182,
+    "searchTerms": [
+      "CONAGRA BRANDS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Eaton",
+    "rank": 183,
+    "searchTerms": [
+      "EATON"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Cummins",
+    "rank": 184,
+    "searchTerms": [
+      "CUMMINS"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Westinghouse Air Brake",
+    "rank": 185,
+    "searchTerms": [
+      "WESTINGHOUSE AIR BRAKE",
+      "WABTEC"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Huntsman",
+    "rank": 186,
+    "searchTerms": [
+      "HUNTSMAN"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Tesla Energy",
+    "rank": 187,
+    "searchTerms": [
+      "TESLA ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Consolidated Edison",
+    "rank": 188,
+    "searchTerms": [
+      "CONSOLIDATED EDISON"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "IQVIA",
+    "rank": 189,
+    "searchTerms": [
+      "IQVIA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Illinois Tool Works",
+    "rank": 190,
+    "searchTerms": [
+      "ILLINOIS TOOL WORKS"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "SpartanNash",
+    "rank": 191,
+    "searchTerms": [
+      "SPARTANNASH"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Schneider Electric",
+    "rank": 192,
+    "searchTerms": [
+      "SCHNEIDER ELECTRIC"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Lithia Motors",
+    "rank": 193,
+    "searchTerms": [
+      "LITHIA MOTORS"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Synnex Technology",
+    "rank": 194,
+    "searchTerms": [
+      "SYNNEX TECHNOLOGY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "American International Group",
+    "rank": 195,
+    "searchTerms": [
+      "AMERICAN INTERNATIONAL GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Fluor",
+    "rank": 196,
+    "searchTerms": [
+      "FLUOR"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Eversource Energy",
+    "rank": 197,
+    "searchTerms": [
+      "EVERSOURCE ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Goodyear",
+    "rank": 198,
+    "searchTerms": [
+      "GOODYEAR"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "FIS",
+    "rank": 199,
+    "searchTerms": [
+      "FIS",
+      "FIDELITY NATIONAL INFORMATION"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Mosaic",
+    "rank": 200,
+    "searchTerms": [
+      "MOSAIC"
+    ],
+    "committeeId": null,
+    "industry": "Agriculture"
+  },
+  {
+    "name": "Kellogg",
+    "rank": 201,
+    "searchTerms": [
+      "KELLOGG"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Altria Group",
+    "rank": 202,
+    "searchTerms": [
+      "ALTRIA",
+      "PHILIP MORRIS"
+    ],
+    "committeeId": "C00082578",
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Advance Auto Parts",
+    "rank": 203,
+    "searchTerms": [
+      "ADVANCE AUTO PARTS"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Caesars Entertainment",
+    "rank": 204,
+    "searchTerms": [
+      "CAESARS ENTERTAINMENT"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Kinder Morgan",
+    "rank": 205,
+    "searchTerms": [
+      "KINDER MORGAN"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Brown-Forman",
+    "rank": 206,
+    "searchTerms": [
+      "BROWN-FORMAN"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Penske Automotive",
+    "rank": 207,
+    "searchTerms": [
+      "PENSKE AUTOMOTIVE"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Lamb Weston",
+    "rank": 208,
+    "searchTerms": [
+      "LAMB WESTON"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Altice USA",
+    "rank": 209,
+    "searchTerms": [
+      "ALTICE USA"
+    ],
+    "committeeId": null,
+    "industry": "Telecom"
+  },
+  {
+    "name": "Principal Financial",
+    "rank": 210,
+    "searchTerms": [
+      "PRINCIPAL FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Whirlpool",
+    "rank": 211,
+    "searchTerms": [
+      "WHIRLPOOL"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Williams Companies",
+    "rank": 212,
+    "searchTerms": [
+      "WILLIAMS COMPANIES"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "W.W. Grainger",
+    "rank": 213,
+    "searchTerms": [
+      "W.W. GRAINGER",
+      "GRAINGER"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Oshkosh",
+    "rank": 214,
+    "searchTerms": [
+      "OSHKOSH"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "O'Reilly Automotive",
+    "rank": 215,
+    "searchTerms": [
+      "O'REILLY AUTOMOTIVE",
+      "OREILLY"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Avnet",
+    "rank": 216,
+    "searchTerms": [
+      "AVNET"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Centene Corporation",
+    "rank": 217,
+    "searchTerms": [
+      "CENTENE CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Fidelity National Financial",
+    "rank": 218,
+    "searchTerms": [
+      "FIDELITY NATIONAL FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "CSX",
+    "rank": 219,
+    "searchTerms": [
+      "CSX"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "Hormel Foods",
+    "rank": 220,
+    "searchTerms": [
+      "HORMEL FOODS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "General Mills",
+    "rank": 221,
+    "searchTerms": [
+      "GENERAL MILLS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Constellation Brands",
+    "rank": 222,
+    "searchTerms": [
+      "CONSTELLATION BRANDS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Laboratory Corporation",
+    "rank": 223,
+    "searchTerms": [
+      "LABORATORY CORPORATION",
+      "LABCORP"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Molson Coors",
+    "rank": 224,
+    "searchTerms": [
+      "MOLSON COORS",
+      "COORS BREWING"
+    ],
+    "committeeId": "C00166918",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "DXC Technology",
+    "rank": 225,
+    "searchTerms": [
+      "DXC TECHNOLOGY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Kraft Heinz",
+    "rank": 226,
+    "searchTerms": [
+      "KRAFT HEINZ"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Norfolk Southern",
+    "rank": 227,
+    "searchTerms": [
+      "NORFOLK SOUTHERN"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "Macy's",
+    "rank": 228,
+    "searchTerms": [
+      "MACYS",
+      "MACY'S"
+    ],
+    "committeeId": "C00235929",
+    "industry": "Retail"
+  },
+  {
+    "name": "Quest Diagnostics",
+    "rank": 229,
+    "searchTerms": [
+      "QUEST DIAGNOSTICS"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Southwest Airlines",
+    "rank": 230,
+    "searchTerms": [
+      "SOUTHWEST AIRLINES"
+    ],
+    "committeeId": "C00193177",
+    "industry": "Transportation"
+  },
+  {
+    "name": "Targa Resources",
+    "rank": 231,
+    "searchTerms": [
+      "TARGA RESOURCES"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Micron Technology",
+    "rank": 232,
+    "searchTerms": [
+      "MICRON TECHNOLOGY"
+    ],
+    "committeeId": "C00308692",
+    "industry": "Tech"
+  },
+  {
+    "name": "Booz Allen Hamilton",
+    "rank": 233,
+    "searchTerms": [
+      "BOOZ ALLEN HAMILTON"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Reliance Steel",
+    "rank": 234,
+    "searchTerms": [
+      "RELIANCE STEEL"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "CoreCivic Inc",
+    "rank": 235,
+    "searchTerms": [
+      "CORECIVIC INC"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Gap Inc",
+    "rank": 236,
+    "searchTerms": [
+      "GAP INC"
+    ],
+    "committeeId": "C00227009",
+    "industry": "Retail"
+  },
+  {
+    "name": "Entergy",
+    "rank": 237,
+    "searchTerms": [
+      "ENTERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "ONEOK",
+    "rank": 238,
+    "searchTerms": [
+      "ONEOK"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "AES",
+    "rank": 239,
+    "searchTerms": [
+      "AES"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "DISH Network",
+    "rank": 240,
+    "searchTerms": [
+      "DISH NETWORK"
+    ],
+    "committeeId": null,
+    "industry": "Telecom"
+  },
+  {
+    "name": "PG&E",
+    "rank": 241,
+    "searchTerms": [
+      "PG&E",
+      "PACIFIC GAS AND ELECTRIC"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Camden Property Trust",
+    "rank": 242,
+    "searchTerms": [
+      "CAMDEN PROPERTY TRUST"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Penske Corporation",
+    "rank": 243,
+    "searchTerms": [
+      "PENSKE CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Apache",
+    "rank": 244,
+    "searchTerms": [
+      "APACHE"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Genuine Parts Company",
+    "rank": 245,
+    "searchTerms": [
+      "GENUINE PARTS COMPANY"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Iron Mountain",
+    "rank": 246,
+    "searchTerms": [
+      "IRON MOUNTAIN"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Baxter International",
+    "rank": 247,
+    "searchTerms": [
+      "BAXTER INTERNATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Lincoln Financial",
+    "rank": 248,
+    "searchTerms": [
+      "LINCOLN FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Universal Health Services",
+    "rank": 249,
+    "searchTerms": [
+      "UNIVERSAL HEALTH SERVICES"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Lennar",
+    "rank": 250,
+    "searchTerms": [
+      "LENNAR"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Darden Restaurants",
+    "rank": 251,
+    "searchTerms": [
+      "DARDEN RESTAURANTS"
+    ],
+    "committeeId": "C00312611",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Union Pacific",
+    "rank": 252,
+    "searchTerms": [
+      "UNION PACIFIC"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "BNSF Railway",
+    "rank": 253,
+    "searchTerms": [
+      "BNSF RAILWAY",
+      "BURLINGTON NORTHERN"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "VF Corporation",
+    "rank": 254,
+    "searchTerms": [
+      "VF CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Sherwin-Williams",
+    "rank": 255,
+    "searchTerms": [
+      "SHERWIN-WILLIAMS"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Ball Corporation",
+    "rank": 256,
+    "searchTerms": [
+      "BALL CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Air Products",
+    "rank": 257,
+    "searchTerms": [
+      "AIR PRODUCTS"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "EOG Resources",
+    "rank": 258,
+    "searchTerms": [
+      "EOG RESOURCES"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Ameren",
+    "rank": 259,
+    "searchTerms": [
+      "AMEREN"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Royal Caribbean",
+    "rank": 260,
+    "searchTerms": [
+      "ROYAL CARIBBEAN"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "DaVita",
+    "rank": 261,
+    "searchTerms": [
+      "DAVITA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "CBRE Group",
+    "rank": 262,
+    "searchTerms": [
+      "CBRE GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Marathon Oil",
+    "rank": 263,
+    "searchTerms": [
+      "MARATHON OIL"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Jones Lang LaSalle",
+    "rank": 264,
+    "searchTerms": [
+      "JONES LANG LASALLE",
+      "JLL"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "American Electric Power",
+    "rank": 265,
+    "searchTerms": [
+      "AMERICAN ELECTRIC POWER",
+      "AEP"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Public Service Enterprise",
+    "rank": 266,
+    "searchTerms": [
+      "PUBLIC SERVICE ENTERPRISE",
+      "PSEG"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Edison International",
+    "rank": 267,
+    "searchTerms": [
+      "EDISON INTERNATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Regeneron",
+    "rank": 268,
+    "searchTerms": [
+      "REGENERON"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Viatris",
+    "rank": 269,
+    "searchTerms": [
+      "VIATRIS"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Caesars Entertainment Inc",
+    "rank": 270,
+    "searchTerms": [
+      "CAESARS ENTERTAINMENT INC"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Fifth Third",
+    "rank": 271,
+    "searchTerms": [
+      "FIFTH THIRD"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "ON Semiconductor",
+    "rank": 272,
+    "searchTerms": [
+      "ON SEMICONDUCTOR"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Qurate Retail",
+    "rank": 273,
+    "searchTerms": [
+      "QURATE RETAIL"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Reinsurance Group",
+    "rank": 274,
+    "searchTerms": [
+      "REINSURANCE GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "J.B. Hunt",
+    "rank": 275,
+    "searchTerms": [
+      "J.B. HUNT"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "Medtronic",
+    "rank": 276,
+    "searchTerms": [
+      "MEDTRONIC"
+    ],
+    "committeeId": "C00283879",
+    "industry": "Healthcare"
+  },
+  {
+    "name": "CenterPoint Energy",
+    "rank": 277,
+    "searchTerms": [
+      "CENTERPOINT ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "eBay",
+    "rank": 278,
+    "searchTerms": [
+      "EBAY"
+    ],
+    "committeeId": "C00429654",
+    "industry": "Tech"
+  },
+  {
+    "name": "Hilton Worldwide",
+    "rank": 279,
+    "searchTerms": [
+      "HILTON WORLDWIDE",
+      "HILTON HOTELS"
+    ],
+    "committeeId": "C00432906",
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Sempra",
+    "rank": 280,
+    "searchTerms": [
+      "SEMPRA"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "WEC Energy",
+    "rank": 281,
+    "searchTerms": [
+      "WEC ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "AutoZone",
+    "rank": 282,
+    "searchTerms": [
+      "AUTOZONE"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Estee Lauder",
+    "rank": 283,
+    "searchTerms": [
+      "ESTEE LAUDER"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Steel Dynamics",
+    "rank": 284,
+    "searchTerms": [
+      "STEEL DYNAMICS"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Applied Materials",
+    "rank": 285,
+    "searchTerms": [
+      "APPLIED MATERIALS"
+    ],
+    "committeeId": "C00265892",
+    "industry": "Tech"
+  },
+  {
+    "name": "Xcel Energy",
+    "rank": 286,
+    "searchTerms": [
+      "XCEL ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Aramark",
+    "rank": 287,
+    "searchTerms": [
+      "ARAMARK"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Texas Instruments",
+    "rank": 288,
+    "searchTerms": [
+      "TEXAS INSTRUMENTS"
+    ],
+    "committeeId": "C00115790",
+    "industry": "Tech"
+  },
+  {
+    "name": "Truist Financial",
+    "rank": 289,
+    "searchTerms": [
+      "TRUIST FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Lam Research",
+    "rank": 290,
+    "searchTerms": [
+      "LAM RESEARCH"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Netflix",
+    "rank": 291,
+    "searchTerms": [
+      "NETFLIX"
+    ],
+    "committeeId": "C00698043",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "PNC Financial",
+    "rank": 292,
+    "searchTerms": [
+      "PNC FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Devon Energy",
+    "rank": 293,
+    "searchTerms": [
+      "DEVON ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Group 1 Automotive",
+    "rank": 294,
+    "searchTerms": [
+      "GROUP 1 AUTOMOTIVE"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Weyerhaeuser",
+    "rank": 295,
+    "searchTerms": [
+      "WEYERHAEUSER"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Colgate-Palmolive",
+    "rank": 296,
+    "searchTerms": [
+      "COLGATE-PALMOLIVE"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "KKR",
+    "rank": 297,
+    "searchTerms": [
+      "KKR"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Alliant Energy",
+    "rank": 298,
+    "searchTerms": [
+      "ALLIANT ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "U.S. Bancorp",
+    "rank": 299,
+    "searchTerms": [
+      "U.S. BANCORP",
+      "US BANCORP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Analog Devices",
+    "rank": 300,
+    "searchTerms": [
+      "ANALOG DEVICES"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "FirstEnergy",
+    "rank": 301,
+    "searchTerms": [
+      "FIRSTENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Tenet Healthcare",
+    "rank": 302,
+    "searchTerms": [
+      "TENET HEALTHCARE"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Reynolds American",
+    "rank": 303,
+    "searchTerms": [
+      "REYNOLDS AMERICAN",
+      "RJ REYNOLDS"
+    ],
+    "committeeId": "C00186817",
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Sonic Automotive",
+    "rank": 304,
+    "searchTerms": [
+      "SONIC AUTOMOTIVE"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Becton Dickinson",
+    "rank": 305,
+    "searchTerms": [
+      "BECTON DICKINSON"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Live Nation",
+    "rank": 306,
+    "searchTerms": [
+      "LIVE NATION"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Moderna",
+    "rank": 307,
+    "searchTerms": [
+      "MODERNA"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Blackstone",
+    "rank": 308,
+    "searchTerms": [
+      "BLACKSTONE"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "HF Sinclair",
+    "rank": 309,
+    "searchTerms": [
+      "HF SINCLAIR"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Cognizant",
+    "rank": 310,
+    "searchTerms": [
+      "COGNIZANT"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Nike Inc",
+    "rank": 311,
+    "searchTerms": [
+      "NIKE INC"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Ameriprise",
+    "rank": 312,
+    "searchTerms": [
+      "AMERIPRISE"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Marvell Technology",
+    "rank": 313,
+    "searchTerms": [
+      "MARVELL TECHNOLOGY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Boston Scientific",
+    "rank": 314,
+    "searchTerms": [
+      "BOSTON SCIENTIFIC"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "NRG Energy",
+    "rank": 315,
+    "searchTerms": [
+      "NRG ENERGY"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Centennial Resource",
+    "rank": 316,
+    "searchTerms": [
+      "CENTENNIAL RESOURCE"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Unum Group",
+    "rank": 317,
+    "searchTerms": [
+      "UNUM GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Stryker",
+    "rank": 318,
+    "searchTerms": [
+      "STRYKER"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Dollar Tree Inc",
+    "rank": 319,
+    "searchTerms": [
+      "DOLLAR TREE INC"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "T. Rowe Price",
+    "rank": 320,
+    "searchTerms": [
+      "T. ROWE PRICE"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Huntington Bancshares",
+    "rank": 321,
+    "searchTerms": [
+      "HUNTINGTON BANCSHARES"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Adobe",
+    "rank": 322,
+    "searchTerms": [
+      "ADOBE"
+    ],
+    "committeeId": "C00310854",
+    "industry": "Tech"
+  },
+  {
+    "name": "Laboratory Corp of America",
+    "rank": 323,
+    "searchTerms": [
+      "LABORATORY CORP OF AMERICA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Packaging Corporation",
+    "rank": 324,
+    "searchTerms": [
+      "PACKAGING CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Hess",
+    "rank": 325,
+    "searchTerms": [
+      "HESS"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Ross Stores Inc",
+    "rank": 326,
+    "searchTerms": [
+      "ROSS STORES INC"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Autodesk",
+    "rank": 327,
+    "searchTerms": [
+      "AUTODESK"
+    ],
+    "committeeId": "C00247379",
+    "industry": "Tech"
+  },
+  {
+    "name": "Owens & Minor",
+    "rank": 328,
+    "searchTerms": [
+      "OWENS & MINOR"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Leidos",
+    "rank": 329,
+    "searchTerms": [
+      "LEIDOS"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Voya Financial",
+    "rank": 330,
+    "searchTerms": [
+      "VOYA FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Ralph Lauren",
+    "rank": 331,
+    "searchTerms": [
+      "RALPH LAUREN"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "MGM Resorts",
+    "rank": 332,
+    "searchTerms": [
+      "MGM RESORTS"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Occidental",
+    "rank": 333,
+    "searchTerms": [
+      "OCCIDENTAL"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Charles Schwab",
+    "rank": 334,
+    "searchTerms": [
+      "CHARLES SCHWAB",
+      "SCHWAB"
+    ],
+    "committeeId": "C00235176",
+    "industry": "Finance"
+  },
+  {
+    "name": "Black Hills",
+    "rank": 335,
+    "searchTerms": [
+      "BLACK HILLS"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Caesars Acquisition",
+    "rank": 336,
+    "searchTerms": [
+      "CAESARS ACQUISITION"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Stanley Black & Decker",
+    "rank": 337,
+    "searchTerms": [
+      "STANLEY BLACK & DECKER"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Toll Brothers",
+    "rank": 338,
+    "searchTerms": [
+      "TOLL BROTHERS"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "ConocoPhillips Company",
+    "rank": 339,
+    "searchTerms": [
+      "CONOCOPHILLIPS COMPANY"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Newell Brands",
+    "rank": 340,
+    "searchTerms": [
+      "NEWELL BRANDS"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "PulteGroup",
+    "rank": 341,
+    "searchTerms": [
+      "PULTEGROUP"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Kimberly-Clark",
+    "rank": 342,
+    "searchTerms": [
+      "KIMBERLY-CLARK"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "ViacomCBS Inc",
+    "rank": 343,
+    "searchTerms": [
+      "VIACOMCBS INC"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Church & Dwight",
+    "rank": 344,
+    "searchTerms": [
+      "CHURCH & DWIGHT"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Intuit",
+    "rank": 345,
+    "searchTerms": [
+      "INTUIT"
+    ],
+    "committeeId": "C00292391",
+    "industry": "Tech"
+  },
+  {
+    "name": "Broadridge",
+    "rank": 346,
+    "searchTerms": [
+      "BROADRIDGE"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Fox Corporation",
+    "rank": 347,
+    "searchTerms": [
+      "FOX CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Media"
+  },
+  {
+    "name": "Sealed Air",
+    "rank": 348,
+    "searchTerms": [
+      "SEALED AIR"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Discovery Inc",
+    "rank": 349,
+    "searchTerms": [
+      "DISCOVERY INC"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Xylem",
+    "rank": 350,
+    "searchTerms": [
+      "XYLEM"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "D.R. Horton",
+    "rank": 351,
+    "searchTerms": [
+      "D.R. HORTON"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Builders FirstSource",
+    "rank": 352,
+    "searchTerms": [
+      "BUILDERS FIRSTSOURCE"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Assurant",
+    "rank": 353,
+    "searchTerms": [
+      "ASSURANT"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "McKesson Corporation",
+    "rank": 354,
+    "searchTerms": [
+      "MCKESSON CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Regions Financial",
+    "rank": 355,
+    "searchTerms": [
+      "REGIONS FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Uber",
+    "rank": 356,
+    "searchTerms": [
+      "UBER"
+    ],
+    "committeeId": "C00697441",
+    "industry": "Tech"
+  },
+  {
+    "name": "International Paper",
+    "rank": 357,
+    "searchTerms": [
+      "INTERNATIONAL PAPER"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Northern Trust",
+    "rank": 358,
+    "searchTerms": [
+      "NORTHERN TRUST"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Nordstrom",
+    "rank": 359,
+    "searchTerms": [
+      "NORDSTROM"
+    ],
+    "committeeId": "C00191718",
+    "industry": "Retail"
+  },
+  {
+    "name": "Mohawk Industries",
+    "rank": 360,
+    "searchTerms": [
+      "MOHAWK INDUSTRIES"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "M&T Bank",
+    "rank": 361,
+    "searchTerms": [
+      "M&T BANK"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Principal Financial Group",
+    "rank": 362,
+    "searchTerms": [
+      "PRINCIPAL FINANCIAL GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Rockwell Automation",
+    "rank": 363,
+    "searchTerms": [
+      "ROCKWELL AUTOMATION"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Equity Residential",
+    "rank": 364,
+    "searchTerms": [
+      "EQUITY RESIDENTIAL"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Motorola Solutions",
+    "rank": 365,
+    "searchTerms": [
+      "MOTOROLA SOLUTIONS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Carrier Global",
+    "rank": 366,
+    "searchTerms": [
+      "CARRIER GLOBAL"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Huntington Ingalls",
+    "rank": 367,
+    "searchTerms": [
+      "HUNTINGTON INGALLS"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Wynn Resorts",
+    "rank": 368,
+    "searchTerms": [
+      "WYNN RESORTS"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Citizens Financial",
+    "rank": 369,
+    "searchTerms": [
+      "CITIZENS FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Lenovo",
+    "rank": 370,
+    "searchTerms": [
+      "LENOVO"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Bunge",
+    "rank": 371,
+    "searchTerms": [
+      "BUNGE"
+    ],
+    "committeeId": null,
+    "industry": "Agriculture"
+  },
+  {
+    "name": "C.H. Robinson",
+    "rank": 372,
+    "searchTerms": [
+      "C.H. ROBINSON"
+    ],
+    "committeeId": null,
+    "industry": "Logistics"
+  },
+  {
+    "name": "Campbell Soup",
+    "rank": 373,
+    "searchTerms": [
+      "CAMPBELL SOUP"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "NiSource",
+    "rank": 374,
+    "searchTerms": [
+      "NISOURCE"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Corning",
+    "rank": 375,
+    "searchTerms": [
+      "CORNING"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Otis Worldwide",
+    "rank": 376,
+    "searchTerms": [
+      "OTIS WORLDWIDE"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Entegris",
+    "rank": 377,
+    "searchTerms": [
+      "ENTEGRIS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "KeyCorp",
+    "rank": 378,
+    "searchTerms": [
+      "KEYCORP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Comerica",
+    "rank": 379,
+    "searchTerms": [
+      "COMERICA"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "KB Home",
+    "rank": 380,
+    "searchTerms": [
+      "KB HOME"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Las Vegas Sands",
+    "rank": 381,
+    "searchTerms": [
+      "LAS VEGAS SANDS"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Fortive",
+    "rank": 382,
+    "searchTerms": [
+      "FORTIVE"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Cooper Companies",
+    "rank": 383,
+    "searchTerms": [
+      "COOPER COMPANIES"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Discover Financial",
+    "rank": 384,
+    "searchTerms": [
+      "DISCOVER FINANCIAL"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Hasbro",
+    "rank": 385,
+    "searchTerms": [
+      "HASBRO"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Agilent",
+    "rank": 386,
+    "searchTerms": [
+      "AGILENT"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "WestRock",
+    "rank": 387,
+    "searchTerms": [
+      "WESTROCK"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "AGCO",
+    "rank": 388,
+    "searchTerms": [
+      "AGCO"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Henry Schein",
+    "rank": 389,
+    "searchTerms": [
+      "HENRY SCHEIN"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "XPO Logistics",
+    "rank": 390,
+    "searchTerms": [
+      "XPO LOGISTICS"
+    ],
+    "committeeId": null,
+    "industry": "Logistics"
+  },
+  {
+    "name": "Clorox",
+    "rank": 391,
+    "searchTerms": [
+      "CLOROX"
+    ],
+    "committeeId": null,
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Global Payments",
+    "rank": 392,
+    "searchTerms": [
+      "GLOBAL PAYMENTS"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Expeditors",
+    "rank": 393,
+    "searchTerms": [
+      "EXPEDITORS"
+    ],
+    "committeeId": null,
+    "industry": "Logistics"
+  },
+  {
+    "name": "Carnival",
+    "rank": 394,
+    "searchTerms": [
+      "CARNIVAL"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Pinnacle West",
+    "rank": 395,
+    "searchTerms": [
+      "PINNACLE WEST"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Huntsman Corporation",
+    "rank": 396,
+    "searchTerms": [
+      "HUNTSMAN CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Domino's Pizza",
+    "rank": 397,
+    "searchTerms": [
+      "DOMINO'S PIZZA",
+      "DOMINOS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Alliant Energy Corp",
+    "rank": 398,
+    "searchTerms": [
+      "ALLIANT ENERGY CORP"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "AvalonBay",
+    "rank": 399,
+    "searchTerms": [
+      "AVALONBAY"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Celanese",
+    "rank": 400,
+    "searchTerms": [
+      "CELANESE"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "IPG Photonics",
+    "rank": 401,
+    "searchTerms": [
+      "IPG PHOTONICS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Zimmer Biomet",
+    "rank": 402,
+    "searchTerms": [
+      "ZIMMER BIOMET"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Eastman Chemical",
+    "rank": 403,
+    "searchTerms": [
+      "EASTMAN CHEMICAL"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Lennar Corporation",
+    "rank": 404,
+    "searchTerms": [
+      "LENNAR CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Western Digital",
+    "rank": 405,
+    "searchTerms": [
+      "WESTERN DIGITAL"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "PerkinElmer",
+    "rank": 406,
+    "searchTerms": [
+      "PERKINELMER"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Vulcan Materials",
+    "rank": 407,
+    "searchTerms": [
+      "VULCAN MATERIALS"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Tractor Supply",
+    "rank": 408,
+    "searchTerms": [
+      "TRACTOR SUPPLY"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Centene Corp",
+    "rank": 409,
+    "searchTerms": [
+      "CENTENE CORP"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "WESCO International",
+    "rank": 410,
+    "searchTerms": [
+      "WESCO INTERNATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "NVR",
+    "rank": 411,
+    "searchTerms": [
+      "NVR"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Alcoa",
+    "rank": 412,
+    "searchTerms": [
+      "ALCOA"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Teledyne",
+    "rank": 413,
+    "searchTerms": [
+      "TELEDYNE"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Norwegian Cruise Line",
+    "rank": 414,
+    "searchTerms": [
+      "NORWEGIAN CRUISE LINE"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "FirstEnergy Corp",
+    "rank": 415,
+    "searchTerms": [
+      "FIRSTENERGY CORP"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Packaging Corp of America",
+    "rank": 416,
+    "searchTerms": [
+      "PACKAGING CORP OF AMERICA"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Vistra",
+    "rank": 417,
+    "searchTerms": [
+      "VISTRA"
+    ],
+    "committeeId": null,
+    "industry": "Utilities"
+  },
+  {
+    "name": "Dover",
+    "rank": 418,
+    "searchTerms": [
+      "DOVER"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Expedia",
+    "rank": 419,
+    "searchTerms": [
+      "EXPEDIA"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Gartner",
+    "rank": 420,
+    "searchTerms": [
+      "GARTNER"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Masco",
+    "rank": 421,
+    "searchTerms": [
+      "MASCO"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Old Dominion Freight",
+    "rank": 422,
+    "searchTerms": [
+      "OLD DOMINION FREIGHT"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "Simon Property",
+    "rank": 423,
+    "searchTerms": [
+      "SIMON PROPERTY"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Hewlett Packard Enterprise",
+    "rank": 424,
+    "searchTerms": [
+      "HEWLETT PACKARD ENTERPRISE",
+      "HPE"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Westlake",
+    "rank": 425,
+    "searchTerms": [
+      "WESTLAKE"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "BlackRock Inc",
+    "rank": 426,
+    "searchTerms": [
+      "BLACKROCK INC"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Franklin Resources",
+    "rank": 427,
+    "searchTerms": [
+      "FRANKLIN RESOURCES"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Incyte",
+    "rank": 428,
+    "searchTerms": [
+      "INCYTE"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Leggett & Platt",
+    "rank": 429,
+    "searchTerms": [
+      "LEGGETT & PLATT"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Hyatt Hotels",
+    "rank": 430,
+    "searchTerms": [
+      "HYATT HOTELS",
+      "HYATT CORPORATION"
+    ],
+    "committeeId": "C00437228",
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Pool Corporation",
+    "rank": 431,
+    "searchTerms": [
+      "POOL CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Illumina",
+    "rank": 432,
+    "searchTerms": [
+      "ILLUMINA"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Edwards Lifesciences",
+    "rank": 433,
+    "searchTerms": [
+      "EDWARDS LIFESCIENCES"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Avery Dennison",
+    "rank": 434,
+    "searchTerms": [
+      "AVERY DENNISON"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Revvity",
+    "rank": 435,
+    "searchTerms": [
+      "REVVITY"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Robert Half",
+    "rank": 436,
+    "searchTerms": [
+      "ROBERT HALF"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Fastenal",
+    "rank": 437,
+    "searchTerms": [
+      "FASTENAL"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Skyworks Solutions",
+    "rank": 438,
+    "searchTerms": [
+      "SKYWORKS SOLUTIONS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Werner Enterprises",
+    "rank": 439,
+    "searchTerms": [
+      "WERNER ENTERPRISES"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "TransDigm",
+    "rank": 440,
+    "searchTerms": [
+      "TRANSDIGM"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "J.M. Smucker",
+    "rank": 441,
+    "searchTerms": [
+      "J.M. SMUCKER",
+      "SMUCKER"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Celgene",
+    "rank": 442,
+    "searchTerms": [
+      "CELGENE"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "CoreSite",
+    "rank": 443,
+    "searchTerms": [
+      "CORESITE"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Regency Centers",
+    "rank": 444,
+    "searchTerms": [
+      "REGENCY CENTERS"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "SEI Investments",
+    "rank": 445,
+    "searchTerms": [
+      "SEI INVESTMENTS"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "LyondellBasell",
+    "rank": 446,
+    "searchTerms": [
+      "LYONDELLBASELL"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Martin Marietta",
+    "rank": 447,
+    "searchTerms": [
+      "MARTIN MARIETTA"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Zions Bancorp",
+    "rank": 448,
+    "searchTerms": [
+      "ZIONS BANCORP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "DCP Midstream",
+    "rank": 449,
+    "searchTerms": [
+      "DCP MIDSTREAM"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Albemarle",
+    "rank": 450,
+    "searchTerms": [
+      "ALBEMARLE"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Apartment Investment",
+    "rank": 451,
+    "searchTerms": [
+      "APARTMENT INVESTMENT"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Ametek",
+    "rank": 452,
+    "searchTerms": [
+      "AMETEK"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Roper Technologies",
+    "rank": 453,
+    "searchTerms": [
+      "ROPER TECHNOLOGIES"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Amcor",
+    "rank": 454,
+    "searchTerms": [
+      "AMCOR"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Hilton Grand Vacations",
+    "rank": 455,
+    "searchTerms": [
+      "HILTON GRAND VACATIONS"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Alaska Air",
+    "rank": 456,
+    "searchTerms": [
+      "ALASKA AIR"
+    ],
+    "committeeId": null,
+    "industry": "Transportation"
+  },
+  {
+    "name": "CF Industries",
+    "rank": 457,
+    "searchTerms": [
+      "CF INDUSTRIES"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Curtiss-Wright",
+    "rank": 458,
+    "searchTerms": [
+      "CURTISS-WRIGHT"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Ulta Beauty",
+    "rank": 459,
+    "searchTerms": [
+      "ULTA BEAUTY"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Packaging Corporation of America",
+    "rank": 460,
+    "searchTerms": [
+      "PACKAGING CORPORATION OF AMERICA"
+    ],
+    "committeeId": null,
+    "industry": "Materials"
+  },
+  {
+    "name": "Unum",
+    "rank": 461,
+    "searchTerms": [
+      "UNUM"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Thomson Reuters",
+    "rank": 462,
+    "searchTerms": [
+      "THOMSON REUTERS"
+    ],
+    "committeeId": null,
+    "industry": "Media"
+  },
+  {
+    "name": "Discover",
+    "rank": 463,
+    "searchTerms": [
+      "DISCOVER"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Northrop Grumman Corp",
+    "rank": 464,
+    "searchTerms": [
+      "NORTHROP GRUMMAN CORP"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "DR Horton",
+    "rank": 465,
+    "searchTerms": [
+      "DR HORTON"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Seagate Technology",
+    "rank": 466,
+    "searchTerms": [
+      "SEAGATE TECHNOLOGY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Watsco",
+    "rank": 467,
+    "searchTerms": [
+      "WATSCO"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Garmin",
+    "rank": 468,
+    "searchTerms": [
+      "GARMIN"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "MGM Resorts International",
+    "rank": 469,
+    "searchTerms": [
+      "MGM RESORTS INTERNATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Hospitality"
+  },
+  {
+    "name": "Interpublic Group",
+    "rank": 470,
+    "searchTerms": [
+      "INTERPUBLIC GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Media"
+  },
+  {
+    "name": "Biogen",
+    "rank": 471,
+    "searchTerms": [
+      "BIOGEN"
+    ],
+    "committeeId": null,
+    "industry": "Pharma"
+  },
+  {
+    "name": "Ventas",
+    "rank": 472,
+    "searchTerms": [
+      "VENTAS"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Lamb Weston Holdings",
+    "rank": 473,
+    "searchTerms": [
+      "LAMB WESTON HOLDINGS"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Chipotle Mexican Grill",
+    "rank": 474,
+    "searchTerms": [
+      "CHIPOTLE"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "McCormick",
+    "rank": 475,
+    "searchTerms": [
+      "MCCORMICK"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Cadence Design",
+    "rank": 476,
+    "searchTerms": [
+      "CADENCE DESIGN"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "IBM Corporation",
+    "rank": 477,
+    "searchTerms": [
+      "IBM",
+      "INTERNATIONAL BUSINESS MACHINES"
+    ],
+    "committeeId": "C00102657",
+    "industry": "Tech"
+  },
+  {
+    "name": "Synopsys",
+    "rank": 478,
+    "searchTerms": [
+      "SYNOPSYS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Lincoln National",
+    "rank": 479,
+    "searchTerms": [
+      "LINCOLN NATIONAL"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Omnicom",
+    "rank": 480,
+    "searchTerms": [
+      "OMNICOM"
+    ],
+    "committeeId": null,
+    "industry": "Media"
+  },
+  {
+    "name": "Sysco Corporation",
+    "rank": 481,
+    "searchTerms": [
+      "SYSCO CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Cintas",
+    "rank": 482,
+    "searchTerms": [
+      "CINTAS"
+    ],
+    "committeeId": null,
+    "industry": "Industrial"
+  },
+  {
+    "name": "Zoetis",
+    "rank": 483,
+    "searchTerms": [
+      "ZOETIS"
+    ],
+    "committeeId": null,
+    "industry": "Healthcare"
+  },
+  {
+    "name": "Arthur J. Gallagher",
+    "rank": 484,
+    "searchTerms": [
+      "ARTHUR J. GALLAGHER",
+      "AJ GALLAGHER"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Digital Realty",
+    "rank": 485,
+    "searchTerms": [
+      "DIGITAL REALTY"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Ansys",
+    "rank": 486,
+    "searchTerms": [
+      "ANSYS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Crown Castle",
+    "rank": 487,
+    "searchTerms": [
+      "CROWN CASTLE"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Paramount",
+    "rank": 488,
+    "searchTerms": [
+      "PARAMOUNT"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Lenovo Group",
+    "rank": 489,
+    "searchTerms": [
+      "LENOVO GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Hershey",
+    "rank": 490,
+    "searchTerms": [
+      "HERSHEY"
+    ],
+    "committeeId": null,
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Marsh & McLennan",
+    "rank": 491,
+    "searchTerms": [
+      "MARSH & MCLENNAN"
+    ],
+    "committeeId": null,
+    "industry": "Insurance"
+  },
+  {
+    "name": "Equinix",
+    "rank": 492,
+    "searchTerms": [
+      "EQUINIX"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "BlackRock Group",
+    "rank": 493,
+    "searchTerms": [
+      "BLACKROCK GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Microchip Technology",
+    "rank": 494,
+    "searchTerms": [
+      "MICROCHIP TECHNOLOGY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "BorgWarner",
+    "rank": 495,
+    "searchTerms": [
+      "BORGWARNER"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Cheniere Energy Inc",
+    "rank": 496,
+    "searchTerms": [
+      "CHENIERE ENERGY INC"
+    ],
+    "committeeId": null,
+    "industry": "Energy"
+  },
+  {
+    "name": "Welltower",
+    "rank": 497,
+    "searchTerms": [
+      "WELLTOWER"
+    ],
+    "committeeId": null,
+    "industry": "Real Estate"
+  },
+  {
+    "name": "Anheuser-Busch InBev",
+    "rank": 498,
+    "searchTerms": [
+      "ANHEUSER-BUSCH",
+      "ANHEUSER BUSCH"
+    ],
+    "committeeId": "C00082453",
+    "industry": "Food & Beverage"
+  },
+  {
+    "name": "Olin",
+    "rank": 499,
+    "searchTerms": [
+      "OLIN"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "FMC Corporation",
+    "rank": 500,
+    "searchTerms": [
+      "FMC CORPORATION"
+    ],
+    "committeeId": null,
+    "industry": "Chemicals"
+  },
+  {
+    "name": "Spotify",
+    "rank": 501,
+    "searchTerms": [
+      "SPOTIFY"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Lyft",
+    "rank": 502,
+    "searchTerms": [
+      "LYFT"
+    ],
+    "committeeId": "C00697409",
+    "industry": "Tech"
+  },
+  {
+    "name": "Airbnb",
+    "rank": 503,
+    "searchTerms": [
+      "AIRBNB"
+    ],
+    "committeeId": "C00697383",
+    "industry": "Tech"
+  },
+  {
+    "name": "Zoom",
+    "rank": 504,
+    "searchTerms": [
+      "ZOOM VIDEO"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Slack",
+    "rank": 505,
+    "searchTerms": [
+      "SLACK TECHNOLOGIES"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Dropbox",
+    "rank": 506,
+    "searchTerms": [
+      "DROPBOX"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Twitter",
+    "rank": 507,
+    "searchTerms": [
+      "TWITTER",
+      "X CORP"
+    ],
+    "committeeId": "C00505867",
+    "industry": "Tech"
+  },
+  {
+    "name": "Snap",
+    "rank": 508,
+    "searchTerms": [
+      "SNAP INC",
+      "SNAPCHAT"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Pinterest",
+    "rank": 509,
+    "searchTerms": [
+      "PINTEREST"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Reddit",
+    "rank": 510,
+    "searchTerms": [
+      "REDDIT"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Discord",
+    "rank": 511,
+    "searchTerms": [
+      "DISCORD"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Roblox",
+    "rank": 512,
+    "searchTerms": [
+      "ROBLOX"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "EA",
+    "rank": 513,
+    "searchTerms": [
+      "ELECTRONIC ARTS",
+      "EA INC"
+    ],
+    "committeeId": "C00306449",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Activision Blizzard",
+    "rank": 514,
+    "searchTerms": [
+      "ACTIVISION BLIZZARD"
+    ],
+    "committeeId": "C00502054",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Take-Two",
+    "rank": 515,
+    "searchTerms": [
+      "TAKE-TWO INTERACTIVE"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Square",
+    "rank": 516,
+    "searchTerms": [
+      "SQUARE INC",
+      "BLOCK INC"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Stripe",
+    "rank": 517,
+    "searchTerms": [
+      "STRIPE"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "ServiceNow",
+    "rank": 518,
+    "searchTerms": [
+      "SERVICENOW"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Workday",
+    "rank": 519,
+    "searchTerms": [
+      "WORKDAY"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Snowflake",
+    "rank": 520,
+    "searchTerms": [
+      "SNOWFLAKE"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Databricks",
+    "rank": 521,
+    "searchTerms": [
+      "DATABRICKS"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "Palantir",
+    "rank": 522,
+    "searchTerms": [
+      "PALANTIR"
+    ],
+    "committeeId": null,
+    "industry": "Tech"
+  },
+  {
+    "name": "SpaceX",
+    "rank": 523,
+    "searchTerms": [
+      "SPACEX",
+      "SPACE EXPLORATION"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Blue Origin",
+    "rank": 524,
+    "searchTerms": [
+      "BLUE ORIGIN"
+    ],
+    "committeeId": null,
+    "industry": "Aerospace & Defense"
+  },
+  {
+    "name": "Rivian",
+    "rank": 525,
+    "searchTerms": [
+      "RIVIAN"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Lucid",
+    "rank": 526,
+    "searchTerms": [
+      "LUCID MOTORS",
+      "LUCID GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "NIO",
+    "rank": 527,
+    "searchTerms": [
+      "NIO INC",
+      "NIO USA"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Honda",
+    "rank": 528,
+    "searchTerms": [
+      "HONDA MOTOR",
+      "AMERICAN HONDA"
+    ],
+    "committeeId": "C00037473",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Nissan",
+    "rank": 529,
+    "searchTerms": [
+      "NISSAN"
+    ],
+    "committeeId": "C00379941",
+    "industry": "Automotive"
+  },
+  {
+    "name": "BMW",
+    "rank": 530,
+    "searchTerms": [
+      "BMW OF NORTH AMERICA"
+    ],
+    "committeeId": "C00379495",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Mercedes-Benz",
+    "rank": 531,
+    "searchTerms": [
+      "MERCEDES-BENZ",
+      "DAIMLER"
+    ],
+    "committeeId": "C00379453",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Volkswagen",
+    "rank": 532,
+    "searchTerms": [
+      "VOLKSWAGEN"
+    ],
+    "committeeId": "C00379446",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Hyundai",
+    "rank": 533,
+    "searchTerms": [
+      "HYUNDAI MOTOR"
+    ],
+    "committeeId": "C00422725",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Kia",
+    "rank": 534,
+    "searchTerms": [
+      "KIA MOTORS"
+    ],
+    "committeeId": null,
+    "industry": "Automotive"
+  },
+  {
+    "name": "Toyota",
+    "rank": 535,
+    "searchTerms": [
+      "TOYOTA"
+    ],
+    "committeeId": "C00382150",
+    "industry": "Automotive"
+  },
+  {
+    "name": "Shell",
+    "rank": 536,
+    "searchTerms": [
+      "SHELL OIL",
+      "SHELL PETROLEUM"
+    ],
+    "committeeId": "C00082263",
+    "industry": "Energy"
+  },
+  {
+    "name": "BP",
+    "rank": 537,
+    "searchTerms": [
+      "BP AMERICA",
+      "BP CORP"
+    ],
+    "committeeId": "C00129056",
+    "industry": "Energy"
+  },
+  {
+    "name": "AMD",
+    "rank": 538,
+    "searchTerms": [
+      "ADVANCED MICRO DEVICES",
+      "AMD INC"
+    ],
+    "committeeId": "C00245142",
+    "industry": "Tech"
+  },
+  {
+    "name": "Sony",
+    "rank": 539,
+    "searchTerms": [
+      "SONY CORPORATION",
+      "SONY AMERICA"
+    ],
+    "committeeId": "C00327031",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Warner Bros",
+    "rank": 540,
+    "searchTerms": [
+      "WARNER BROS",
+      "WARNER BROTHERS"
+    ],
+    "committeeId": null,
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Time Warner",
+    "rank": 541,
+    "searchTerms": [
+      "TIME WARNER",
+      "WARNERMEDIA"
+    ],
+    "committeeId": "C00242978",
+    "industry": "Entertainment"
+  },
+  {
+    "name": "Cox Enterprises",
+    "rank": 542,
+    "searchTerms": [
+      "COX ENTERPRISES",
+      "COX COMMUNICATIONS"
+    ],
+    "committeeId": "C00302166",
+    "industry": "Telecom"
+  },
+  {
+    "name": "Whole Foods",
+    "rank": 543,
+    "searchTerms": [
+      "WHOLE FOODS"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Safeway",
+    "rank": 544,
+    "searchTerms": [
+      "SAFEWAY"
+    ],
+    "committeeId": "C00065052",
+    "industry": "Retail"
+  },
+  {
+    "name": "GameStop",
+    "rank": 545,
+    "searchTerms": [
+      "GAMESTOP"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Bed Bath & Beyond",
+    "rank": 546,
+    "searchTerms": [
+      "BED BATH & BEYOND",
+      "BED BATH AND BEYOND"
+    ],
+    "committeeId": "C00401885",
+    "industry": "Retail"
+  },
+  {
+    "name": "Wayfair",
+    "rank": 547,
+    "searchTerms": [
+      "WAYFAIR"
+    ],
+    "committeeId": null,
+    "industry": "Retail"
+  },
+  {
+    "name": "Unilever",
+    "rank": 548,
+    "searchTerms": [
+      "UNILEVER"
+    ],
+    "committeeId": "C00496620",
+    "industry": "Consumer Goods"
+  },
+  {
+    "name": "Vanguard",
+    "rank": 549,
+    "searchTerms": [
+      "VANGUARD GROUP"
+    ],
+    "committeeId": null,
+    "industry": "Finance"
+  },
+  {
+    "name": "Fidelity",
+    "rank": 550,
+    "searchTerms": [
+      "FIDELITY INVESTMENTS",
+      "FMR CORP"
+    ],
+    "committeeId": "C00103523",
+    "industry": "Finance"
+  }
+]

@@ -49,12 +49,12 @@ function slugify(text) {
     .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-')        // Replace spaces with -
-    .replace(/&/g, '-and-')      // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '')    // Remove all non-word chars except hyphens
-    .replace(/\-\-+/g, '-')      // Replace multiple - with single -
-    .replace(/^-+/, '')          // Trim - from start of text
-    .replace(/-+$/, '');         // Trim - from end of text
+    .replace(/\s+/g, '-')
+    .replace(/&/g, '-and-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
 }
 
 /**
@@ -85,7 +85,6 @@ export async function pushCompany(companyData) {
 
 /**
  * Push all companies to Firestore in batches
- * Firestore batch limit is 500 operations
  */
 export async function pushAllCompanies(companies) {
   if (!db) {
@@ -112,19 +111,15 @@ export async function pushAllCompanies(companies) {
     batch.set(docRef, docData);
     operationCount++;
 
-    // Commit batch when we reach the limit
     if (operationCount >= BATCH_SIZE) {
       await batch.commit();
       batchCount++;
       console.log(`  Committed batch ${batchCount} (${operationCount} companies)`);
-
-      // Start a new batch
       batch = db.batch();
       operationCount = 0;
     }
   }
 
-  // Commit any remaining operations
   if (operationCount > 0) {
     await batch.commit();
     batchCount++;
@@ -164,7 +159,124 @@ async function updateMetadata(companyCount) {
 }
 
 /**
- * Push all candidates to Firestore in batches
+ * Push candidates for a single state to Firestore.
+ * Batch writes scoped to one state. Deletes stale candidates for that state.
+ */
+export async function pushCandidatesForState(stateCode, candidates) {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  console.log(`\nPushing ${candidates.length} candidates for ${stateCode} to Firestore...`);
+
+  // Get existing candidates for this state (for stale cleanup)
+  const existingSnapshot = await db.collection('candidates')
+    .where('state', '==', stateCode)
+    .get();
+
+  const existingIds = new Set(existingSnapshot.docs.map(doc => doc.id));
+  const freshIds = new Set();
+
+  const BATCH_SIZE = 500;
+  let batch = db.batch();
+  let operationCount = 0;
+  let batchCount = 0;
+
+  for (const candidateData of candidates) {
+    const candidateId = slugify(candidateData.candidateId || candidateData.name);
+    freshIds.add(candidateId);
+
+    const docData = {
+      ...candidateData,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+      slug: candidateId
+    };
+
+    const docRef = db.collection('candidates').doc(candidateId);
+    batch.set(docRef, docData);
+    operationCount++;
+
+    if (operationCount >= BATCH_SIZE) {
+      await batch.commit();
+      batchCount++;
+      batch = db.batch();
+      operationCount = 0;
+    }
+  }
+
+  // Delete stale candidates (existed before but not in fresh batch)
+  for (const oldId of existingIds) {
+    if (!freshIds.has(oldId)) {
+      batch.delete(db.collection('candidates').doc(oldId));
+      operationCount++;
+      console.log(`  Deleting stale candidate: ${oldId}`);
+
+      if (operationCount >= BATCH_SIZE) {
+        await batch.commit();
+        batchCount++;
+        batch = db.batch();
+        operationCount = 0;
+      }
+    }
+  }
+
+  if (operationCount > 0) {
+    await batch.commit();
+    batchCount++;
+  }
+
+  console.log(`  Pushed ${candidates.length} candidates for ${stateCode} in ${batchCount} batch(es)`);
+
+  // Update candidate metadata with state counts
+  await updateCandidateMetadataForState(stateCode, candidates.length);
+}
+
+/**
+ * Push presidential candidates to Firestore.
+ */
+export async function pushPresidentialCandidates(candidates) {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  console.log(`\nPushing ${candidates.length} presidential candidates to Firestore...`);
+
+  const BATCH_SIZE = 500;
+  let batch = db.batch();
+  let operationCount = 0;
+  let batchCount = 0;
+
+  for (const candidateData of candidates) {
+    const candidateId = slugify(candidateData.candidateId || candidateData.name);
+
+    const docData = {
+      ...candidateData,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+      slug: candidateId
+    };
+
+    const docRef = db.collection('candidates').doc(candidateId);
+    batch.set(docRef, docData);
+    operationCount++;
+
+    if (operationCount >= BATCH_SIZE) {
+      await batch.commit();
+      batchCount++;
+      batch = db.batch();
+      operationCount = 0;
+    }
+  }
+
+  if (operationCount > 0) {
+    await batch.commit();
+    batchCount++;
+  }
+
+  console.log(`  Pushed ${candidates.length} presidential candidates in ${batchCount} batch(es)`);
+}
+
+/**
+ * Push all candidates to Firestore in batches (legacy — used for single-state runs)
  */
 export async function pushAllCandidates(candidates) {
   if (!db) {
@@ -208,19 +320,35 @@ export async function pushAllCandidates(candidates) {
 
   console.log(`Successfully pushed ${candidates.length} candidates in ${batchCount} batch(es)`);
 
-  // Update metadata
   await updateCandidateMetadata(candidates.length);
 
   return candidates.length;
 }
 
 /**
- * Update candidate metadata document
+ * Update candidate metadata with per-state counts (merge into existing doc)
+ */
+async function updateCandidateMetadataForState(stateCode, count) {
+  if (!db) return;
+
+  try {
+    const metadataRef = db.collection('metadata').doc('candidateLastUpdate');
+
+    await metadataRef.set({
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: new Date().toISOString(),
+      [`stateCounts.${stateCode}`]: count,
+    }, { merge: true });
+  } catch (error) {
+    console.error(`Failed to update candidate metadata for ${stateCode}:`, error.message);
+  }
+}
+
+/**
+ * Update candidate metadata document (legacy)
  */
 async function updateCandidateMetadata(candidateCount) {
-  if (!db) {
-    throw new Error('Firebase not initialized. Call initFirebase() first.');
-  }
+  if (!db) return;
 
   try {
     const metadataRef = db.collection('metadata').doc('candidateLastUpdate');
@@ -234,12 +362,39 @@ async function updateCandidateMetadata(candidateCount) {
     console.log('Candidate metadata updated successfully');
   } catch (error) {
     console.error('Failed to update candidate metadata:', error.message);
-    throw error;
   }
 }
 
 /**
- * Clear all companies from Firestore (use with caution!)
+ * Send FCM push notification to "updates" topic.
+ * Non-throwing — notification failure shouldn't fail the pipeline.
+ */
+export async function sendUpdateNotification(companyCount, candidateCount) {
+  try {
+    const message = {
+      topic: 'updates',
+      notification: {
+        title: 'DemocratDollar Data Updated',
+        body: `${companyCount} companies and ${candidateCount} candidates refreshed with latest FEC data.`,
+      },
+      apns: {
+        payload: {
+          aps: {
+            sound: 'default',
+          },
+        },
+      },
+    };
+
+    const response = await admin.messaging().send(message);
+    console.log('FCM notification sent:', response);
+  } catch (error) {
+    console.warn('Failed to send FCM notification (non-fatal):', error.message);
+  }
+}
+
+/**
+ * Clear all companies from Firestore
  */
 export async function clearAllCompanies() {
   if (!db) {
@@ -280,11 +435,7 @@ export async function getCompany(slug) {
   }
 
   const doc = await db.collection('companies').doc(slug).get();
-
-  if (!doc.exists) {
-    return null;
-  }
-
+  if (!doc.exists) return null;
   return doc.data();
 }
 

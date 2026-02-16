@@ -1,19 +1,16 @@
 import { FEC_API_BASE, API_KEY, rateLimitedFetch, RateLimitExhaustedError } from './fec-api.js';
-
-// Wake County NC congressional districts (2024 redistricting)
-// NC-02 covers most of Wake County (Raleigh)
-// NC-13 covers parts of Wake County
-const WAKE_COUNTY_DISTRICTS = ['02', '13'];
-const STATE = 'NC';
+import { getAllJurisdictions, getDistrictsForState, getStateName } from './states.js';
 
 // Election cycles to search
 const ELECTION_CYCLES = [2024, 2026];
 
 /**
- * Search for federal candidates in NC by office type.
+ * Search for federal candidates by office type, state, and district.
  * office: H (House), S (Senate), P (President)
+ * state: two-letter code (omit for Presidential)
+ * district: two-digit string (only for House)
  */
-async function searchFederalCandidates(office, district = null) {
+async function searchFederalCandidates(office, state = null, district = null) {
   const candidates = [];
 
   for (const cycle of ELECTION_CYCLES) {
@@ -21,7 +18,11 @@ async function searchFederalCandidates(office, district = null) {
     let hasMore = true;
 
     while (hasMore) {
-      let url = `${FEC_API_BASE}/candidates/search/?api_key=${API_KEY}&state=${STATE}&office=${office}&cycle=${cycle}&is_active_candidate=true&per_page=100&page=${page}&sort=name`;
+      let url = `${FEC_API_BASE}/candidates/search/?api_key=${API_KEY}&office=${office}&cycle=${cycle}&is_active_candidate=true&per_page=100&page=${page}&sort=name`;
+
+      if (state) {
+        url += `&state=${state}`;
+      }
 
       if (district) {
         url += `&district=${district}`;
@@ -42,7 +43,7 @@ async function searchFederalCandidates(office, district = null) {
         hasMore = data.pagination && data.pagination.pages > page;
         page++;
       } catch (error) {
-        console.warn(`  Error searching ${office} candidates (cycle ${cycle}, page ${page}):`, error.message);
+        console.warn(`  Error searching ${office} candidates (${state || 'US'}, cycle ${cycle}, page ${page}):`, error.message);
         hasMore = false;
       }
     }
@@ -52,11 +53,11 @@ async function searchFederalCandidates(office, district = null) {
 }
 
 /**
- * Fetch all Wake County relevant candidates.
- * Returns array of candidate objects from FEC API.
+ * Fetch all candidates for a single state (Senate + all House districts).
  */
-export async function fetchWakeCountyCandidates() {
-  console.log('\nFetching Wake County NC candidates...');
+export async function fetchCandidatesForState(stateCode) {
+  const stateName = getStateName(stateCode);
+  console.log(`\nFetching candidates for ${stateName} (${stateCode})...`);
   const allCandidates = [];
   const seenIds = new Set();
 
@@ -69,27 +70,82 @@ export async function fetchWakeCountyCandidates() {
     }
   }
 
-  // NC Senate candidates (statewide)
-  console.log('  Searching NC Senate candidates...');
-  const senateCandidates = await searchFederalCandidates('S');
+  // Senate candidates (statewide)
+  console.log(`  Searching ${stateCode} Senate candidates...`);
+  const senateCandidates = await searchFederalCandidates('S', stateCode);
   console.log(`    Found ${senateCandidates.length} Senate candidates`);
   addUnique(senateCandidates);
 
-  // NC House candidates for Wake County districts
-  for (const district of WAKE_COUNTY_DISTRICTS) {
-    console.log(`  Searching NC House District ${district} candidates...`);
-    const houseCandidates = await searchFederalCandidates('H', district);
+  // House candidates for all districts
+  const districts = getDistrictsForState(stateCode);
+  for (const district of districts) {
+    console.log(`  Searching ${stateCode} House District ${district} candidates...`);
+    const houseCandidates = await searchFederalCandidates('H', stateCode, district);
     console.log(`    Found ${houseCandidates.length} House-${district} candidates`);
     addUnique(houseCandidates);
   }
 
-  console.log(`  Total unique federal candidates found: ${allCandidates.length}`);
+  console.log(`  Total unique candidates for ${stateCode}: ${allCandidates.length}`);
   return allCandidates;
 }
 
 /**
+ * Fetch Presidential candidates (no state filter).
+ */
+export async function fetchPresidentialCandidates() {
+  console.log('\nFetching Presidential candidates...');
+  const candidates = await searchFederalCandidates('P');
+  console.log(`  Found ${candidates.length} Presidential candidates`);
+  return candidates;
+}
+
+/**
+ * Fetch all nationwide candidates across all states + Presidential.
+ * options.states — array of state codes to process (null = all)
+ * options.skipPresidential — skip presidential candidates
+ * options.onStateComplete — callback(stateCode, candidates) after each state
+ */
+export async function fetchAllNationwideCandidates(options = {}) {
+  const {
+    states: requestedStates = null,
+    skipPresidential = false,
+    onStateComplete = null,
+  } = options;
+
+  const jurisdictions = getAllJurisdictions();
+  const statesToProcess = requestedStates
+    ? jurisdictions.filter(j => requestedStates.includes(j.code))
+    : jurisdictions;
+
+  const allCandidates = [];
+  const stateCounts = {};
+
+  // Presidential candidates (once, not per-state)
+  if (!skipPresidential && !requestedStates) {
+    const presidential = await fetchPresidentialCandidates();
+    allCandidates.push(...presidential);
+  }
+
+  // Per-state candidates
+  const total = statesToProcess.length;
+  for (let i = 0; i < statesToProcess.length; i++) {
+    const { code } = statesToProcess[i];
+    console.log(`\n[${i + 1}/${total}] Processing ${getStateName(code)} (${code})...`);
+
+    const stateCandidates = await fetchCandidatesForState(code);
+    allCandidates.push(...stateCandidates);
+    stateCounts[code] = stateCandidates.length;
+
+    if (onStateComplete) {
+      await onStateComplete(code, stateCandidates);
+    }
+  }
+
+  return { candidates: allCandidates, stateCounts };
+}
+
+/**
  * Fetch the principal campaign committee for a candidate.
- * This is the committee that receives contributions on behalf of the candidate.
  */
 async function fetchCandidateCommittee(candidateId) {
   try {
@@ -97,7 +153,6 @@ async function fetchCandidateCommittee(candidateId) {
     const data = await rateLimitedFetch(url);
 
     if (data.results && data.results.length > 0) {
-      // Return the most recently active principal committee
       return data.results[0];
     }
   } catch (error) {
@@ -115,7 +170,7 @@ async function fetchCandidateTotals(candidateId) {
     const data = await rateLimitedFetch(url);
 
     if (data.results && data.results.length > 0) {
-      return data.results[0]; // Most recent cycle
+      return data.results[0];
     }
   } catch (error) {
     console.warn(`  Could not fetch totals for ${candidateId}:`, error.message);
@@ -125,14 +180,12 @@ async function fetchCandidateTotals(candidateId) {
 
 /**
  * Fetch Schedule A (contributions received) for a committee.
- * Returns top donors grouped by contributor name.
  */
 async function fetchContributions(committeeId, limit = 500) {
   const allContributions = [];
   let lastIndex = null;
   let lastContributionDate = null;
 
-  // Fetch from recent cycles
   for (const period of [2024, 2026]) {
     let pagesFetched = 0;
 
@@ -160,7 +213,6 @@ async function fetchContributions(committeeId, limit = 500) {
           break;
         }
 
-        // Limit pages to avoid excessive API calls
         if (pagesFetched >= 5) break;
       } catch (error) {
         console.warn(`    Error fetching contributions for ${committeeId} (${period}):`, error.message);
@@ -168,7 +220,6 @@ async function fetchContributions(committeeId, limit = 500) {
       }
     }
 
-    // Reset pagination for next period
     lastIndex = null;
     lastContributionDate = null;
   }
@@ -178,7 +229,6 @@ async function fetchContributions(committeeId, limit = 500) {
 
 /**
  * Aggregate contributions by donor.
- * Groups individual contributions and identifies PAC vs individual donors.
  */
 function aggregateDonors(contributions) {
   const donorMap = new Map();
@@ -187,7 +237,6 @@ function aggregateDonors(contributions) {
     const amount = parseFloat(contribution.contribution_receipt_amount) || 0;
     if (amount <= 0) continue;
 
-    // Determine donor type and name
     const committeeType = contribution.contributor_committee_type;
     const entityType = contribution.entity_type;
 
@@ -195,11 +244,9 @@ function aggregateDonors(contributions) {
     let donorType;
 
     if (committeeType || entityType === 'COM' || entityType === 'PAC' || entityType === 'ORG') {
-      // PAC or organization
       donorName = contribution.contributor_name || contribution.committee_name || 'Unknown PAC';
       donorType = 'pac';
     } else if (entityType === 'IND' || !entityType) {
-      // Individual contributor
       donorName = contribution.contributor_name || 'Unknown Individual';
       donorType = 'individual';
     } else {
@@ -207,9 +254,7 @@ function aggregateDonors(contributions) {
       donorType = 'other';
     }
 
-    // Normalize the name
     donorName = donorName.trim().toUpperCase();
-
     const key = `${donorType}:${donorName}`;
 
     if (donorMap.has(key)) {
@@ -234,11 +279,8 @@ function aggregateDonors(contributions) {
     }
   }
 
-  // Convert to sorted array (top donors first)
-  const donors = Array.from(donorMap.values())
+  return Array.from(donorMap.values())
     .sort((a, b) => b.totalAmount - a.totalAmount);
-
-  return donors;
 }
 
 /**
@@ -261,7 +303,7 @@ export async function processCandidate(fecCandidate) {
   if (office === 'S') {
     officeLabel = 'US Senate';
   } else if (office === 'H') {
-    officeLabel = `US House NC-${district}`;
+    officeLabel = `US House ${state}-${district}`;
   } else if (office === 'P') {
     officeLabel = 'President';
   } else {
@@ -304,7 +346,7 @@ export async function processCandidate(fecCandidate) {
   const donors = aggregateDonors(contributions);
   console.log(`    Aggregated into ${donors.length} unique donors`);
 
-  // Calculate totals from our aggregated data
+  // Calculate totals
   const totalFromPacs = donors
     .filter(d => d.type === 'pac')
     .reduce((sum, d) => sum + d.totalAmount, 0);
@@ -315,10 +357,9 @@ export async function processCandidate(fecCandidate) {
     .filter(d => d.type === 'other')
     .reduce((sum, d) => sum + d.totalAmount, 0);
 
-  // Use FEC totals if available, otherwise our calculated totals
   const totalRaised = totals?.receipts || (totalFromPacs + totalFromIndividuals + totalFromOther);
 
-  // Keep top 50 donors for the detail view
+  // Keep top 50 donors for detail view
   const topDonors = donors.slice(0, 50).map(d => ({
     name: d.name,
     type: d.type,
@@ -356,17 +397,14 @@ export async function processCandidate(fecCandidate) {
 function formatCandidateName(fecName) {
   if (!fecName) return 'Unknown';
 
-  // FEC names are like "SMITH, JOHN A" or "SMITH, JOHN"
   const parts = fecName.split(',');
   if (parts.length < 2) {
-    // No comma — already in a different format, just title case it
     return titleCase(stripTitles(fecName.trim()));
   }
 
   const lastName = stripTitles(parts[0].trim());
   const firstMiddle = stripTitles(parts.slice(1).join(',').trim());
 
-  // Remove suffixes like JR, SR, III, II, IV
   const suffixPattern = /\b(JR|SR|III|II|IV)\b\.?$/i;
   const cleanFirst = firstMiddle.replace(suffixPattern, '').trim();
   const suffix = firstMiddle.match(suffixPattern)?.[1] || '';
@@ -375,10 +413,6 @@ function formatCandidateName(fecName) {
   return formatted.trim();
 }
 
-/**
- * Strip honorifics and titles from a name part.
- * FEC data sometimes includes MR., MRS., MS., DR., HON., REV., etc.
- */
 function stripTitles(namePart) {
   return namePart
     .replace(/\b(MR|MRS|MS|MISS|DR|HON|REV|SGT|CPT|MAJ|COL|GEN|SEN|REP)\b\.?\s*/gi, '')

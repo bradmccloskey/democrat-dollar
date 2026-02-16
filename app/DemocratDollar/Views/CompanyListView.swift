@@ -32,6 +32,33 @@ struct CompanyListView: View {
             } else if companies.isEmpty {
                 ContentUnavailableView.search(text: viewModel.searchText)
             } else {
+                // Industry filter chips
+                if viewModel.availableIndustries.count > 1 {
+                    Section {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                FilterChip(
+                                    label: "All",
+                                    isSelected: viewModel.industryFilter == nil
+                                ) {
+                                    viewModel.industryFilter = nil
+                                }
+
+                                ForEach(viewModel.availableIndustries, id: \.self) { industry in
+                                    FilterChip(
+                                        label: industry,
+                                        isSelected: viewModel.industryFilter == industry
+                                    ) {
+                                        viewModel.industryFilter = industry
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 4)
+                        }
+                    }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                }
+
                 Section {
                     ForEach(companies) { company in
                         NavigationLink(destination: CompanyDetailView(company: company)) {
@@ -93,6 +120,7 @@ struct CompanyListView: View {
         case .name: return "textformat.abc"
         case .industry: return "building.2"
         case .partisanPercent: return "chart.bar"
+        case .fortune500Rank: return "number"
         }
     }
 }

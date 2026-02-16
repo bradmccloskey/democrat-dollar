@@ -23,8 +23,12 @@
 		DD0001D52C0000000000 /* CandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D62C0000000000 /* CandidateListView.swift */; };
 		DD0001D72C0000000000 /* CandidateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001D82C0000000000 /* CandidateRowView.swift */; };
 		DD0001D92C0000000000 /* CandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001DA2C0000000000 /* CandidateDetailView.swift */; };
+		DD0001E12C0000000000 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001E02C0000000000 /* FilterChip.swift */; };
+		DD0001E32C0000000000 /* StatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001E22C0000000000 /* StatePickerView.swift */; };
+		DD0001E52C0000000000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001E42C0000000000 /* AppDelegate.swift */; };
 		DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001BF2C0000000000 /* FirebaseFirestore */; };
 		DD0001D02C0000000000 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001CF2C0000000000 /* FirebaseCore */; };
+		DD0001E72C0000000000 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001E82C0000000000 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		DD0001D62C0000000000 /* CandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateListView.swift; sourceTree = "<group>"; };
 		DD0001D82C0000000000 /* CandidateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateRowView.swift; sourceTree = "<group>"; };
 		DD0001DA2C0000000000 /* CandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateDetailView.swift; sourceTree = "<group>"; };
+		DD0001E02C0000000000 /* FilterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChip.swift; sourceTree = "<group>"; };
+		DD0001E22C0000000000 /* StatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerView.swift; sourceTree = "<group>"; };
+		DD0001E42C0000000000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD0001E62C0000000000 /* DemocratDollar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemocratDollar.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			files = (
 				DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */,
 				DD0001D02C0000000000 /* FirebaseCore in Frameworks */,
+				DD0001E72C0000000000 /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				DD0001A92C0000000000 /* DemocratDollarApp.swift */,
+				DD0001E42C0000000000 /* AppDelegate.swift */,
+				DD0001E62C0000000000 /* DemocratDollar.entitlements */,
 				DD0001AE2C0000000001 /* GoogleService-Info.plist */,
 				DD0001C12C0000000000 /* Models */,
 				DD0001C22C0000000000 /* ViewModels */,
@@ -117,6 +128,8 @@
 				DD0001D62C0000000000 /* CandidateListView.swift */,
 				DD0001D82C0000000000 /* CandidateRowView.swift */,
 				DD0001DA2C0000000000 /* CandidateDetailView.swift */,
+				DD0001E22C0000000000 /* StatePickerView.swift */,
+				DD0001E02C0000000000 /* FilterChip.swift */,
 				DD0001BB2C0000000000 /* PartisanBar.swift */,
 				DD0001BD2C0000000000 /* AboutView.swift */,
 			);
@@ -150,6 +163,7 @@
 			packageProductDependencies = (
 				DD0001BF2C0000000000 /* FirebaseFirestore */,
 				DD0001CF2C0000000000 /* FirebaseCore */,
+				DD0001E82C0000000000 /* FirebaseMessaging */,
 			);
 			productName = DemocratDollar;
 			productReference = DD0001A62C0000000000 /* DemocratDollar.app */;
@@ -221,6 +235,9 @@
 				DD0001D92C0000000000 /* CandidateDetailView.swift in Sources */,
 				DD0001BC2C0000000000 /* PartisanBar.swift in Sources */,
 				DD0001BE2C0000000000 /* AboutView.swift in Sources */,
+				DD0001E12C0000000000 /* FilterChip.swift in Sources */,
+				DD0001E32C0000000000 /* StatePickerView.swift in Sources */,
+				DD0001E52C0000000000 /* AppDelegate.swift in Sources */,
 				DD0001AA2C0000000000 /* DemocratDollarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,8 +373,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemocratDollar/DemocratDollar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -371,7 +389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -387,8 +405,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DemocratDollar/DemocratDollar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -402,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -457,6 +476,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		DD0001E82C0000000000 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD0001BE2C0000000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -18,7 +18,7 @@ struct AboutView: View {
                         Spacer()
                     }
 
-                    Text("DemocratDollar helps you make informed purchasing decisions by showing how companies' Political Action Committees (PACs) distribute their donations between political parties. You can also browse candidates to see who is funding their campaigns.")
+                    Text("DemocratDollar helps you make informed purchasing decisions by showing how Fortune 500 companies' Political Action Committees (PACs) distribute their donations between political parties. You can also browse federal candidates in any state to see who is funding their campaigns.")
                         .font(.body)
                         .foregroundStyle(.secondary)
                 }
@@ -29,7 +29,7 @@ struct AboutView: View {
                 InfoRow(
                     icon: "doc.text.magnifyingglass",
                     title: "Data Collection",
-                    description: "We aggregate Federal Election Commission (FEC) public records to track PAC contributions."
+                    description: "We aggregate Federal Election Commission (FEC) public records to track PAC contributions from Fortune 500 companies."
                 )
 
                 InfoRow(
@@ -60,13 +60,18 @@ struct AboutView: View {
                     category: .mixed,
                     threshold: "45-55% split between parties"
                 )
+
+                CategoryExplanationRow(
+                    category: .none,
+                    threshold: "Company has no active PAC"
+                )
             }
 
             Section("Candidate View") {
                 InfoRow(
                     icon: "person.2.fill",
                     title: "Browse Candidates",
-                    description: "See candidates running in Wake County, NC races and who is funding their campaigns."
+                    description: "See federal candidates in any state and who is funding their campaigns."
                 )
 
                 InfoRow(
@@ -86,12 +91,12 @@ struct AboutView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     MethodologyPoint(
                         icon: "building.2.fill",
-                        text: "Data represents PAC contributions from companies to federal candidates"
+                        text: "Data represents PAC contributions from Fortune 500 companies to federal candidates"
                     )
 
                     MethodologyPoint(
                         icon: "calendar",
-                        text: "Database updated every 2 weeks from FEC records"
+                        text: "Company data updated weekly, candidate data updated weekly"
                     )
 
                     MethodologyPoint(

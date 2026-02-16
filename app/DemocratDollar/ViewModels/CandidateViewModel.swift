@@ -55,10 +55,28 @@ class CandidateViewModel {
     var errorMessage: String?
     var lastUpdateDate: Date?
 
+    private(set) var stateCode: String?
+    private(set) var officeCode: String?
+
     private var db = Firestore.firestore()
     private var listener: ListenerRegistration?
 
+    /// Default init — loads all candidates (legacy)
     init() {
+        fetchCandidates()
+        fetchMetadata()
+    }
+
+    /// Load candidates for a specific state
+    init(stateCode: String) {
+        self.stateCode = stateCode
+        fetchCandidates()
+        fetchMetadata()
+    }
+
+    /// Load candidates for a specific office (e.g., Presidential)
+    init(officeCode: String) {
+        self.officeCode = officeCode
         fetchCandidates()
         fetchMetadata()
     }
@@ -67,12 +85,25 @@ class CandidateViewModel {
         listener?.remove()
     }
 
+    var stateDisplayName: String {
+        guard let code = stateCode else { return "Candidates" }
+        return StateInfo.name(for: code) ?? code
+    }
+
     func fetchCandidates() {
         isLoading = true
         errorMessage = nil
 
-        listener = db.collection("candidates")
-            .addSnapshotListener { [weak self] snapshot, error in
+        var query: Query = db.collection("candidates")
+
+        if let stateCode = stateCode {
+            query = query.whereField("state", isEqualTo: stateCode)
+        }
+        if let officeCode = officeCode {
+            query = query.whereField("officeCode", isEqualTo: officeCode)
+        }
+
+        listener = query.addSnapshotListener { [weak self] snapshot, error in
                 guard let self = self else { return }
 
                 if let error = error {
@@ -164,5 +195,36 @@ class CandidateViewModel {
                 return $0.totalRaised > $1.totalRaised
             }
         }
+    }
+}
+
+/// Helper for state name lookup
+enum StateInfo {
+    private static let stateNames: [String: String] = [
+        "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
+        "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
+        "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho",
+        "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
+        "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
+        "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
+        "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
+        "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York",
+        "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
+        "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+        "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah",
+        "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
+        "WI": "Wisconsin", "WY": "Wyoming", "DC": "District of Columbia",
+        "AS": "American Samoa", "GU": "Guam", "MP": "Northern Mariana Islands",
+        "PR": "Puerto Rico", "VI": "US Virgin Islands",
+    ]
+
+    static func name(for code: String) -> String? {
+        stateNames[code]
+    }
+
+    static var allStates: [(code: String, name: String)] {
+        stateNames
+            .sorted { $0.value < $1.value }
+            .map { (code: $0.key, name: $0.value) }
     }
 }
