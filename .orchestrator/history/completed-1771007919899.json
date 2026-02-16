@@ -1,0 +1,6 @@
+{
+  "summary": "Implemented candidate view feature for Wake County NC races. Full-stack: data pipeline (FEC API candidate fetcher + donor aggregation), Firebase infrastructure (rules, indexes, push functions), iOS app (Candidate/Donor models, CandidateViewModel, CandidateListView with office/party filters, CandidateRowView, CandidateDetailView with fundraising breakdown and top donors). New Candidates tab added to main TabView. iOS build verified successfully.",
+  "phase": "Candidate View Feature - All Phases Complete",
+  "nextSteps": "Run `node updater/src/update-candidates.js --dry-run` to test the data pipeline with live FEC API data. Then run without --dry-run to push candidate data to Firestore. Deploy updated Firestore rules and indexes with `firebase deploy --only firestore`.",
+  "timestamp": "2026-02-13T13:40:00Z"
+}
