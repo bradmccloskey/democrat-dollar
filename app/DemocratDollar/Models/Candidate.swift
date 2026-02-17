@@ -64,6 +64,13 @@ struct Candidate: Identifiable, Codable {
     var committeeId: String?
     var lastUpdated: Date?
 
+    enum CodingKeys: String, CodingKey {
+        case candidateId, name, party, office, officeCode
+        case district, state, incumbentChallenger
+        case totalRaised, totalFromPacs, totalFromIndividuals
+        case donorCount, topDonors, committeeId, lastUpdated
+    }
+
     var partyDisplayName: String {
         switch party {
         case "DEM": return "Democrat"

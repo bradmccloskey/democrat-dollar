@@ -8,19 +8,27 @@
     "update": "node src/index.js",
     "update-candidates": "node src/update-candidates.js",
     "update-all": "bash run-update.sh",
-    "test": "node src/index.js --dry-run",
+    "test": "vitest run",
     "test-candidates": "node src/update-candidates.js --dry-run",
     "test-company": "node src/index.js --dry-run --company",
     "send-notification": "node src/send-notification.js"
   },
-  "keywords": ["fec", "political", "donations", "firebase"],
+  "keywords": [
+    "fec",
+    "political",
+    "donations",
+    "firebase"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "firebase-admin": "^12.0.0",
-    "dotenv": "^16.4.0"
+    "dotenv": "^16.4.0",
+    "firebase-admin": "^12.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
   }
 }

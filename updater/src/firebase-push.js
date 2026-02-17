@@ -493,3 +493,6 @@ export async function getCompaniesByIndustry(industry) {
 
   return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
+
+// Test exports — pure functions with no Firebase/network dependencies
+export { toFirestoreValue as _toFirestoreValue, toFirestoreFields as _toFirestoreFields, DOUBLE_FIELDS as _DOUBLE_FIELDS };

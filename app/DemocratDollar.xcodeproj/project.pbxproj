@@ -29,7 +29,21 @@
 		DD0001C02C0000000000 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001BF2C0000000000 /* FirebaseFirestore */; };
 		DD0001D02C0000000000 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001CF2C0000000000 /* FirebaseCore */; };
 		DD0001E72C0000000000 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = DD0001E82C0000000000 /* FirebaseMessaging */; };
+		DD0002132C0000000000 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002122C0000000000 /* Formatters.swift */; };
+		DD0002052C0000000000 /* CompanyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002022C0000000000 /* CompanyDecodingTests.swift */; };
+		DD0002062C0000000000 /* CandidateDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002032C0000000000 /* CandidateDecodingTests.swift */; };
+		DD0002072C0000000000 /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002042C0000000000 /* FormatterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD00020D2C0000000000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD00019E2C0000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD0001A52C0000000000;
+			remoteInfo = DemocratDollar;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DD0001A62C0000000000 /* DemocratDollar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemocratDollar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +67,11 @@
 		DD0001E22C0000000000 /* StatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerView.swift; sourceTree = "<group>"; };
 		DD0001E42C0000000000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD0001E62C0000000000 /* DemocratDollar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemocratDollar.entitlements; sourceTree = "<group>"; };
+		DD0002012C0000000000 /* DemocratDollarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemocratDollarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0002022C0000000000 /* CompanyDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDecodingTests.swift; sourceTree = "<group>"; };
+		DD0002032C0000000000 /* CandidateDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateDecodingTests.swift; sourceTree = "<group>"; };
+		DD0002042C0000000000 /* FormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTests.swift; sourceTree = "<group>"; };
+		DD0002122C0000000000 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +85,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD00020A2C0000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0001A82C0000000000 /* DemocratDollar */,
+				DD0002082C0000000000 /* DemocratDollarTests */,
 				DD0001A72C0000000000 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0001A62C0000000000 /* DemocratDollar.app */,
+				DD0002012C0000000000 /* DemocratDollarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +123,7 @@
 				DD0001C12C0000000000 /* Models */,
 				DD0001C22C0000000000 /* ViewModels */,
 				DD0001C32C0000000000 /* Views */,
+				DD0002142C0000000000 /* Extensions */,
 				DD0001C42C0000000000 /* Resources */,
 			);
 			path = DemocratDollar;
@@ -144,6 +173,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DD0002142C0000000000 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD0002122C0000000000 /* Formatters.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD0002082C0000000000 /* DemocratDollarTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD0002022C0000000000 /* CompanyDecodingTests.swift */,
+				DD0002032C0000000000 /* CandidateDecodingTests.swift */,
+				DD0002042C0000000000 /* FormatterTests.swift */,
+			);
+			path = DemocratDollarTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +216,24 @@
 			productReference = DD0001A62C0000000000 /* DemocratDollar.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DD00020C2C0000000000 /* DemocratDollarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0002112C0000000000 /* Build configuration list for PBXNativeTarget "DemocratDollarTests" */;
+			buildPhases = (
+				DD0002092C0000000000 /* Sources */,
+				DD00020A2C0000000000 /* Frameworks */,
+				DD00020B2C0000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD00020E2C0000000000 /* PBXTargetDependency */,
+			);
+			name = DemocratDollarTests;
+			productName = DemocratDollarTests;
+			productReference = DD0002012C0000000000 /* DemocratDollarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,6 +246,10 @@
 				TargetAttributes = {
 					DD0001A52C0000000000 = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					DD00020C2C0000000000 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = DD0001A52C0000000000;
 					};
 				};
 			};
@@ -201,6 +270,7 @@
 			projectRoot = "";
 			targets = (
 				DD0001A52C0000000000 /* DemocratDollar */,
+				DD00020C2C0000000000 /* DemocratDollarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +282,13 @@
 			files = (
 				DD0001AE2C0000000000 /* Assets.xcassets in Resources */,
 				DD0001AF2C0000000000 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00020B2C0000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,10 +316,29 @@
 				DD0001E32C0000000000 /* StatePickerView.swift in Sources */,
 				DD0001E52C0000000000 /* AppDelegate.swift in Sources */,
 				DD0001AA2C0000000000 /* DemocratDollarApp.swift in Sources */,
+				DD0002132C0000000000 /* Formatters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0002092C0000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0002052C0000000000 /* CompanyDecodingTests.swift in Sources */,
+				DD0002062C0000000000 /* CandidateDecodingTests.swift in Sources */,
+				DD0002072C0000000000 /* FormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD00020E2C0000000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD0001A52C0000000000 /* DemocratDollar */;
+			targetProxy = DD00020D2C0000000000 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DD0001C82C0000000000 /* Debug */ = {
@@ -432,6 +528,48 @@
 			};
 			name = Release;
 		};
+		DD00020F2C0000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JJG6G52H47;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemocratDollar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemocratDollar";
+			};
+			name = Debug;
+		};
+		DD0002102C0000000000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JJG6G52H47;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.democratdollar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemocratDollar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemocratDollar";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -449,6 +587,15 @@
 			buildConfigurations = (
 				DD0001CB2C0000000000 /* Debug */,
 				DD0001CC2C0000000000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0002112C0000000000 /* Build configuration list for PBXNativeTarget "DemocratDollarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD00020F2C0000000000 /* Debug */,
+				DD0002102C0000000000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

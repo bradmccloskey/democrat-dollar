@@ -50,6 +50,12 @@ struct Company: Identifiable, Codable {
     var rank: Int?
     var hasPac: Bool?
 
+    enum CodingKeys: String, CodingKey {
+        case name, industry, totalDemocrat, totalRepublican
+        case percentDemocrat, percentRepublican, category
+        case lastUpdated, fecCommitteeIds, rank, hasPac
+    }
+
     var totalDonations: Double {
         totalDemocrat + totalRepublican
     }
