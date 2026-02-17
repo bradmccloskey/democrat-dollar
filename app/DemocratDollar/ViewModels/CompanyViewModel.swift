@@ -58,15 +58,11 @@ class CompanyViewModel {
                     return
                 }
 
-                do {
-                    self.companies = try documents.compactMap { document in
-                        try document.data(as: Company.self)
-                    }
-                    self.isLoading = false
-                } catch {
-                    self.errorMessage = "Failed to parse companies: \(error.localizedDescription)"
-                    self.isLoading = false
+                self.companies = documents.compactMap { document in
+                    try? document.data(as: Company.self)
                 }
+                self.errorMessage = nil
+                self.isLoading = false
             }
     }
 

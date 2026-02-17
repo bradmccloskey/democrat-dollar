@@ -58,97 +58,104 @@ function slugify(text) {
 }
 
 /**
- * Ensure numeric fields are stored as Firestore doubles (not integers).
- * Swift Codable expects Double for these fields — integer 0 causes decode failures.
+ * Convert a company data object to Firestore REST API field format.
+ * Explicitly sets doubleValue for fields Swift expects as Double,
+ * integerValue for Int fields, preventing type mismatch decode failures.
  */
-function ensureDoubles(data) {
-  const doubleFields = [
-    'totalDemocrat', 'totalRepublican', 'totalOther', 'totalContributions',
-    'percentDemocrat', 'percentRepublican'
-  ];
-  const result = { ...data };
-  for (const field of doubleFields) {
-    if (field in result && typeof result[field] === 'number') {
-      // Adding Number.MIN_VALUE to integers forces Firestore to store as doubleValue
-      // For non-zero values with decimals, this is a no-op (already double)
-      if (Number.isInteger(result[field])) {
-        result[field] = result[field] + Number.MIN_VALUE;
-      }
-    }
+const DOUBLE_FIELDS = new Set([
+  'totalDemocrat', 'totalRepublican', 'totalOther', 'totalContributions',
+  'percentDemocrat', 'percentRepublican'
+]);
+
+function toFirestoreFields(data) {
+  const fields = {};
+  for (const [key, val] of Object.entries(data)) {
+    if (key === 'lastUpdated') continue;
+    fields[key] = toFirestoreValue(key, val);
   }
-  return result;
+  fields.lastUpdated = { timestampValue: new Date().toISOString() };
+  return fields;
+}
+
+function toFirestoreValue(key, val) {
+  if (val === null || val === undefined) return { nullValue: null };
+  if (typeof val === 'boolean') return { booleanValue: val };
+  if (typeof val === 'string') return { stringValue: val };
+  if (Array.isArray(val)) {
+    if (val.length === 0) return { arrayValue: { values: [] } };
+    return { arrayValue: { values: val.map(v => toFirestoreValue(null, v)) } };
+  }
+  if (typeof val === 'number') {
+    // Fields Swift expects as Double must be doubleValue
+    if (DOUBLE_FIELDS.has(key)) return { doubleValue: val };
+    // Everything else (rank, disbursementCount) stays as integer
+    if (Number.isInteger(val)) return { integerValue: String(val) };
+    return { doubleValue: val };
+  }
+  return { stringValue: String(val) };
+}
+
+let _accessToken = null;
+let _tokenExpiry = 0;
+
+async function getAccessToken() {
+  if (_accessToken && Date.now() < _tokenExpiry) return _accessToken;
+  const cred = admin.credential.cert(
+    JSON.parse(readFileSync(process.env.FIREBASE_SERVICE_ACCOUNT_PATH, 'utf8'))
+  );
+  const token = await cred.getAccessToken();
+  _accessToken = token.access_token;
+  _tokenExpiry = Date.now() + 50 * 60 * 1000; // refresh 10 min before expiry
+  return _accessToken;
 }
 
 /**
- * Push a single company to Firestore
+ * Push a single company to Firestore via REST API for explicit type control.
  */
 export async function pushCompany(companyData) {
-  if (!db) {
-    throw new Error('Firebase not initialized. Call initFirebase() first.');
-  }
-
   const companyId = slugify(companyData.name);
+  const dataWithSlug = { ...companyData, slug: companyId };
+  const fields = toFirestoreFields(dataWithSlug);
+  const token = await getAccessToken();
 
-  const docData = {
-    ...ensureDoubles(companyData),
-    lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-    slug: companyId
-  };
+  const url = `https://firestore.googleapis.com/v1/projects/democrat-dollar/databases/(default)/documents/companies/${companyId}`;
+  const response = await fetch(url, {
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ fields }),
+  });
 
-  try {
-    await db.collection('companies').doc(companyId).set(docData);
-    console.log(`  Pushed ${companyData.name} to Firestore (${companyId})`);
-    return companyId;
-  } catch (error) {
-    console.error(`  Failed to push ${companyData.name}:`, error.message);
-    throw error;
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Firestore REST error ${response.status}: ${err}`);
   }
+
+  console.log(`  Pushed ${companyData.name} to Firestore (${companyId})`);
+  return companyId;
 }
 
 /**
- * Push all companies to Firestore in batches
+ * Push all companies to Firestore via REST API (explicit type control).
+ * Uses individual REST calls instead of SDK batches to ensure Double fields
+ * are stored as doubleValue, not integerValue.
  */
 export async function pushAllCompanies(companies) {
-  if (!db) {
-    throw new Error('Firebase not initialized. Call initFirebase() first.');
-  }
+  console.log(`\nPushing ${companies.length} companies to Firestore via REST...`);
 
-  console.log(`\nPushing ${companies.length} companies to Firestore...`);
-
-  const BATCH_SIZE = 500;
-  let batch = db.batch();
-  let operationCount = 0;
-  let batchCount = 0;
-
+  let pushed = 0;
   for (const companyData of companies) {
-    const companyId = slugify(companyData.name);
-
-    const docData = {
-      ...ensureDoubles(companyData),
-      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-      slug: companyId
-    };
-
-    const docRef = db.collection('companies').doc(companyId);
-    batch.set(docRef, docData);
-    operationCount++;
-
-    if (operationCount >= BATCH_SIZE) {
-      await batch.commit();
-      batchCount++;
-      console.log(`  Committed batch ${batchCount} (${operationCount} companies)`);
-      batch = db.batch();
-      operationCount = 0;
+    try {
+      await pushCompany(companyData);
+      pushed++;
+    } catch (error) {
+      console.error(`  Failed to push ${companyData.name}:`, error.message);
     }
   }
 
-  if (operationCount > 0) {
-    await batch.commit();
-    batchCount++;
-    console.log(`  Committed final batch ${batchCount} (${operationCount} companies)`);
-  }
-
-  console.log(`Successfully pushed ${companies.length} companies in ${batchCount} batch(es)`);
+  console.log(`Successfully pushed ${pushed}/${companies.length} companies`);
 
   // Update metadata
   await updateMetadata(companies.length);
