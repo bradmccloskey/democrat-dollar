@@ -71,6 +71,8 @@ function toFirestoreFields(data) {
   const fields = {};
   for (const [key, val] of Object.entries(data)) {
     if (key === 'lastUpdated') continue;
+    // Skip empty arrays — optional fields in Swift decode as nil when absent
+    if (Array.isArray(val) && val.length === 0) continue;
     fields[key] = toFirestoreValue(key, val);
   }
   fields.lastUpdated = { timestampValue: new Date().toISOString() };
@@ -82,7 +84,6 @@ function toFirestoreValue(key, val) {
   if (typeof val === 'boolean') return { booleanValue: val };
   if (typeof val === 'string') return { stringValue: val };
   if (Array.isArray(val)) {
-    if (val.length === 0) return { arrayValue: { values: [] } };
     return { arrayValue: { values: val.map(v => toFirestoreValue(null, v)) } };
   }
   if (typeof val === 'number') {
