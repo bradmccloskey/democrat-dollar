@@ -58,6 +58,28 @@ function slugify(text) {
 }
 
 /**
+ * Ensure numeric fields are stored as Firestore doubles (not integers).
+ * Swift Codable expects Double for these fields — integer 0 causes decode failures.
+ */
+function ensureDoubles(data) {
+  const doubleFields = [
+    'totalDemocrat', 'totalRepublican', 'totalOther', 'totalContributions',
+    'percentDemocrat', 'percentRepublican'
+  ];
+  const result = { ...data };
+  for (const field of doubleFields) {
+    if (field in result && typeof result[field] === 'number') {
+      // Adding Number.MIN_VALUE to integers forces Firestore to store as doubleValue
+      // For non-zero values with decimals, this is a no-op (already double)
+      if (Number.isInteger(result[field])) {
+        result[field] = result[field] + Number.MIN_VALUE;
+      }
+    }
+  }
+  return result;
+}
+
+/**
  * Push a single company to Firestore
  */
 export async function pushCompany(companyData) {
@@ -68,7 +90,7 @@ export async function pushCompany(companyData) {
   const companyId = slugify(companyData.name);
 
   const docData = {
-    ...companyData,
+    ...ensureDoubles(companyData),
     lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
     slug: companyId
   };
@@ -102,7 +124,7 @@ export async function pushAllCompanies(companies) {
     const companyId = slugify(companyData.name);
 
     const docData = {
-      ...companyData,
+      ...ensureDoubles(companyData),
       lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
       slug: companyId
     };

@@ -15,7 +15,8 @@ import {
 } from './categorize.js';
 import {
   initFirebase,
-  pushAllCompanies
+  pushAllCompanies,
+  pushCompany
 } from './firebase-push.js';
 
 dotenv.config();
@@ -192,6 +193,15 @@ async function main() {
       noPacCount++;
     } else {
       successCount++;
+    }
+
+    // Push each company to Firebase immediately so live app gets data incrementally
+    if (!isDryRun && !result.error && result.category !== 'error') {
+      try {
+        await pushCompany(result);
+      } catch (pushError) {
+        console.error(`  Failed to push ${companyName} to Firebase:`, pushError.message);
+      }
     }
   }
 
