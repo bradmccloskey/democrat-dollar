@@ -6,7 +6,6 @@ node_modules/
 updater/.env
 updater/firebase-service-account.json
 updater/service-account.json
-app/DemocratDollar/GoogleService-Info.plist
 
 # Logs
 updater/logs/*.log
