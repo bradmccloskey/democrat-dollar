@@ -193,6 +193,9 @@ async function main() {
     }
   }
 
+  // Write actual count for run-update.sh notification
+  writeFileSync('logs/candidate-count.txt', String(totalCandidatesPushed));
+
   printSummary(totalCandidatesPushed, stateCounts);
 }
 

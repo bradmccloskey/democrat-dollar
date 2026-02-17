@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { writeFileSync, mkdirSync } from 'fs';
 import dotenv from 'dotenv';
 import {
   getTrackedCompanies,
@@ -275,6 +276,10 @@ async function main() {
       console.log(`  ${result.name}: ${result.error}`);
     }
   }
+
+  // Write actual count for run-update.sh notification
+  mkdirSync('logs', { recursive: true });
+  writeFileSync('logs/company-count.txt', String(validResults.length));
 
   console.log('\n' + '='.repeat(70));
   console.log(`End time: ${new Date().toISOString()}`);

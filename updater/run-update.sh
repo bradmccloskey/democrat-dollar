@@ -44,9 +44,11 @@ fi
 if [ $COMPANY_EXIT -eq 0 ] || [ $CANDIDATE_EXIT -eq 0 ]; then
   echo ""
   echo "========== STEP 3: Push Notification =========="
-  # Approximate counts — notification is best-effort
-  COMPANY_COUNT=500
-  CANDIDATE_COUNT=2000
+  # Read actual counts written by each pipeline
+  COMPANY_COUNT=0
+  CANDIDATE_COUNT=0
+  [ -f logs/company-count.txt ] && COMPANY_COUNT=$(cat logs/company-count.txt)
+  [ -f logs/candidate-count.txt ] && CANDIDATE_COUNT=$(cat logs/candidate-count.txt)
   node src/send-notification.js $COMPANY_COUNT $CANDIDATE_COUNT 2>&1 | tee -a "$LOG_FILE"
 fi
 

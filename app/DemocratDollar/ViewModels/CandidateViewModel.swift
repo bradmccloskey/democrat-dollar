@@ -140,6 +140,19 @@ class CandidateViewModel {
         fetchMetadata()
     }
 
+    /// Fetch state candidate counts from metadata (used by StatePickerView)
+    static func fetchStateCounts(completion: @escaping ([String: Int]) -> Void) {
+        Firestore.firestore().collection("metadata").document("candidateLastUpdate")
+            .getDocument { snapshot, error in
+                if let data = snapshot?.data(),
+                   let counts = data["stateCounts"] as? [String: Int] {
+                    completion(counts)
+                } else {
+                    completion([:])
+                }
+            }
+    }
+
     var filteredCandidates: [Candidate] {
         var filtered = candidates
 

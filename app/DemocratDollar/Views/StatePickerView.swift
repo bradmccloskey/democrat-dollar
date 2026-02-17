@@ -1,12 +1,9 @@
 import SwiftUI
-import FirebaseFirestore
 
 struct StatePickerView: View {
     @State private var searchText = ""
     @State private var stateCounts: [String: Int] = [:]
     @State private var isLoading = true
-
-    private var db = Firestore.firestore()
 
     private var filteredStates: [(code: String, name: String)] {
         let all = StateInfo.allStates
@@ -103,14 +100,10 @@ struct StatePickerView: View {
     }
 
     private func loadStateCounts() {
-        db.collection("metadata").document("candidateLastUpdate")
-            .getDocument { snapshot, error in
-                if let data = snapshot?.data(),
-                   let counts = data["stateCounts"] as? [String: Int] {
-                    self.stateCounts = counts
-                }
-                self.isLoading = false
-            }
+        CandidateViewModel.fetchStateCounts { counts in
+            self.stateCounts = counts
+            self.isLoading = false
+        }
     }
 }
 

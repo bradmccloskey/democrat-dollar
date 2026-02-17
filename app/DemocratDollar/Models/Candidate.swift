@@ -42,14 +42,7 @@ struct Donor: Codable, Identifiable {
     }
 
     var formattedAmount: String {
-        formatCurrency(totalAmount)
-    }
-
-    private func formatCurrency(_ amount: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
-        return formatter.string(from: NSNumber(value: amount)) ?? "$0"
+        totalAmount.formattedAsCurrency
     }
 }
 
@@ -122,29 +115,18 @@ struct Candidate: Identifiable, Codable {
     }
 
     var formattedTotalRaised: String {
-        formatCurrency(totalRaised)
+        totalRaised.formattedAsCurrency
     }
 
     var formattedTotalFromPacs: String {
-        formatCurrency(totalFromPacs)
+        totalFromPacs.formattedAsCurrency
     }
 
     var formattedTotalFromIndividuals: String {
-        formatCurrency(totalFromIndividuals)
+        totalFromIndividuals.formattedAsCurrency
     }
 
     var formattedLastUpdated: String {
-        guard let date = lastUpdated else { return "Unknown" }
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter.string(from: date)
-    }
-
-    private func formatCurrency(_ amount: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
-        return formatter.string(from: NSNumber(value: amount)) ?? "$0"
+        lastUpdated?.formattedMedium ?? "Unknown"
     }
 }
