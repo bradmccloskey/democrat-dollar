@@ -64,7 +64,9 @@ function slugify(text) {
  */
 const DOUBLE_FIELDS = new Set([
   'totalDemocrat', 'totalRepublican', 'totalOther', 'totalContributions',
-  'percentDemocrat', 'percentRepublican'
+  'percentDemocrat', 'percentRepublican',
+  // Candidate fields Swift expects as Double
+  'totalRaised', 'totalFromPacs', 'totalFromIndividuals', 'totalAmount'
 ]);
 
 function toFirestoreFields(data) {
@@ -86,10 +88,18 @@ function toFirestoreValue(key, val) {
   if (Array.isArray(val)) {
     return { arrayValue: { values: val.map(v => toFirestoreValue(null, v)) } };
   }
+  // Plain object (e.g., a Donor inside topDonors array) — recurse into fields
+  if (typeof val === 'object' && val !== null && !(val instanceof Date)) {
+    const mapFields = {};
+    for (const [k, v] of Object.entries(val)) {
+      mapFields[k] = toFirestoreValue(k, v);
+    }
+    return { mapValue: { fields: mapFields } };
+  }
   if (typeof val === 'number') {
     // Fields Swift expects as Double must be doubleValue
     if (DOUBLE_FIELDS.has(key)) return { doubleValue: val };
-    // Everything else (rank, disbursementCount) stays as integer
+    // Everything else (rank, disbursementCount, donorCount, contributionCount) stays as integer
     if (Number.isInteger(val)) return { integerValue: String(val) };
     return { doubleValue: val };
   }
@@ -167,7 +177,7 @@ export async function pushAllCompanies(companies) {
 /**
  * Update metadata document with last update timestamp and count
  */
-async function updateMetadata(companyCount) {
+export async function updateMetadata(companyCount) {
   if (!db) {
     throw new Error('Firebase not initialized. Call initFirebase() first.');
   }
@@ -189,15 +199,44 @@ async function updateMetadata(companyCount) {
 }
 
 /**
+ * Push a single candidate to Firestore via REST API for explicit type control.
+ * Ensures totalRaised, totalFromPacs, totalFromIndividuals, and nested
+ * topDonors[].totalAmount are stored as doubleValue.
+ */
+async function pushCandidateREST(candidateData) {
+  const candidateId = slugify(candidateData.candidateId || candidateData.name);
+  const dataWithSlug = { ...candidateData, slug: candidateId };
+  const fields = toFirestoreFields(dataWithSlug);
+  const token = await getAccessToken();
+
+  const url = `https://firestore.googleapis.com/v1/projects/democrat-dollar/databases/(default)/documents/candidates/${candidateId}`;
+  const response = await fetch(url, {
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ fields }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Firestore REST error ${response.status}: ${err}`);
+  }
+
+  return candidateId;
+}
+
+/**
  * Push candidates for a single state to Firestore.
- * Batch writes scoped to one state. Deletes stale candidates for that state.
+ * Uses REST API for writes (explicit type control), SDK for stale deletes.
  */
 export async function pushCandidatesForState(stateCode, candidates) {
   if (!db) {
     throw new Error('Firebase not initialized. Call initFirebase() first.');
   }
 
-  console.log(`\nPushing ${candidates.length} candidates for ${stateCode} to Firestore...`);
+  console.log(`\nPushing ${candidates.length} candidates for ${stateCode} to Firestore via REST...`);
 
   // Get existing candidates for this state (for stale cleanup)
   const existingSnapshot = await db.collection('candidates')
@@ -207,148 +246,92 @@ export async function pushCandidatesForState(stateCode, candidates) {
   const existingIds = new Set(existingSnapshot.docs.map(doc => doc.id));
   const freshIds = new Set();
 
-  const BATCH_SIZE = 500;
-  let batch = db.batch();
-  let operationCount = 0;
-  let batchCount = 0;
-
+  // Push each candidate via REST for explicit type control
+  let pushed = 0;
   for (const candidateData of candidates) {
-    const candidateId = slugify(candidateData.candidateId || candidateData.name);
-    freshIds.add(candidateId);
-
-    const docData = {
-      ...candidateData,
-      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-      slug: candidateId
-    };
-
-    const docRef = db.collection('candidates').doc(candidateId);
-    batch.set(docRef, docData);
-    operationCount++;
-
-    if (operationCount >= BATCH_SIZE) {
-      await batch.commit();
-      batchCount++;
-      batch = db.batch();
-      operationCount = 0;
+    try {
+      const candidateId = await pushCandidateREST(candidateData);
+      freshIds.add(candidateId);
+      pushed++;
+    } catch (error) {
+      console.error(`  Failed to push candidate ${candidateData.name}:`, error.message);
     }
   }
 
-  // Delete stale candidates (existed before but not in fresh batch)
-  for (const oldId of existingIds) {
-    if (!freshIds.has(oldId)) {
+  // Delete stale candidates via SDK batch (type mapping irrelevant for deletes)
+  const staleIds = [...existingIds].filter(id => !freshIds.has(id));
+  if (staleIds.length > 0) {
+    const BATCH_SIZE = 500;
+    let batch = db.batch();
+    let operationCount = 0;
+
+    for (const oldId of staleIds) {
       batch.delete(db.collection('candidates').doc(oldId));
       operationCount++;
       console.log(`  Deleting stale candidate: ${oldId}`);
 
       if (operationCount >= BATCH_SIZE) {
         await batch.commit();
-        batchCount++;
         batch = db.batch();
         operationCount = 0;
       }
     }
+
+    if (operationCount > 0) {
+      await batch.commit();
+    }
   }
 
-  if (operationCount > 0) {
-    await batch.commit();
-    batchCount++;
-  }
-
-  console.log(`  Pushed ${candidates.length} candidates for ${stateCode} in ${batchCount} batch(es)`);
+  console.log(`  Pushed ${pushed}/${candidates.length} candidates for ${stateCode}`);
 
   // Update candidate metadata with state counts
   await updateCandidateMetadataForState(stateCode, candidates.length);
 }
 
 /**
- * Push presidential candidates to Firestore.
+ * Push presidential candidates to Firestore via REST API.
  */
 export async function pushPresidentialCandidates(candidates) {
   if (!db) {
     throw new Error('Firebase not initialized. Call initFirebase() first.');
   }
 
-  console.log(`\nPushing ${candidates.length} presidential candidates to Firestore...`);
+  console.log(`\nPushing ${candidates.length} presidential candidates to Firestore via REST...`);
 
-  const BATCH_SIZE = 500;
-  let batch = db.batch();
-  let operationCount = 0;
-  let batchCount = 0;
-
+  let pushed = 0;
   for (const candidateData of candidates) {
-    const candidateId = slugify(candidateData.candidateId || candidateData.name);
-
-    const docData = {
-      ...candidateData,
-      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-      slug: candidateId
-    };
-
-    const docRef = db.collection('candidates').doc(candidateId);
-    batch.set(docRef, docData);
-    operationCount++;
-
-    if (operationCount >= BATCH_SIZE) {
-      await batch.commit();
-      batchCount++;
-      batch = db.batch();
-      operationCount = 0;
+    try {
+      await pushCandidateREST(candidateData);
+      pushed++;
+    } catch (error) {
+      console.error(`  Failed to push presidential candidate ${candidateData.name}:`, error.message);
     }
   }
 
-  if (operationCount > 0) {
-    await batch.commit();
-    batchCount++;
-  }
-
-  console.log(`  Pushed ${candidates.length} presidential candidates in ${batchCount} batch(es)`);
+  console.log(`  Pushed ${pushed}/${candidates.length} presidential candidates`);
 }
 
 /**
- * Push all candidates to Firestore in batches (legacy — used for single-state runs)
+ * Push all candidates to Firestore via REST (legacy — used for single-state runs)
  */
 export async function pushAllCandidates(candidates) {
   if (!db) {
     throw new Error('Firebase not initialized. Call initFirebase() first.');
   }
 
-  console.log(`\nPushing ${candidates.length} candidates to Firestore...`);
+  console.log(`\nPushing ${candidates.length} candidates to Firestore via REST...`);
 
-  const BATCH_SIZE = 500;
-  let batch = db.batch();
-  let operationCount = 0;
-  let batchCount = 0;
-
+  let pushed = 0;
   for (const candidateData of candidates) {
-    const candidateId = slugify(candidateData.candidateId || candidateData.name);
-
-    const docData = {
-      ...candidateData,
-      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-      slug: candidateId
-    };
-
-    const docRef = db.collection('candidates').doc(candidateId);
-    batch.set(docRef, docData);
-    operationCount++;
-
-    if (operationCount >= BATCH_SIZE) {
-      await batch.commit();
-      batchCount++;
-      console.log(`  Committed batch ${batchCount} (${operationCount} candidates)`);
-      batch = db.batch();
-      operationCount = 0;
+    try {
+      await pushCandidateREST(candidateData);
+      pushed++;
+    } catch (error) {
+      console.error(`  Failed to push ${candidateData.name}:`, error.message);
     }
   }
 
-  if (operationCount > 0) {
-    await batch.commit();
-    batchCount++;
-    console.log(`  Committed final batch ${batchCount} (${operationCount} candidates)`);
-  }
-
-  console.log(`Successfully pushed ${candidates.length} candidates in ${batchCount} batch(es)`);
+  console.log(`Successfully pushed ${pushed}/${candidates.length} candidates`);
 
   await updateCandidateMetadata(candidates.length);
 

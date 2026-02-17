@@ -15,8 +15,8 @@ import {
 } from './categorize.js';
 import {
   initFirebase,
-  pushAllCompanies,
-  pushCompany
+  pushCompany,
+  updateMetadata
 } from './firebase-push.js';
 
 dotenv.config();
@@ -250,14 +250,14 @@ async function main() {
     console.log(`  ${company.name}: ${company.percentRepublican.toFixed(1)}% REP ($${company.totalRepublican.toLocaleString()})`);
   }
 
-  // Push to Firebase — include all valid results (categorized + no-PAC)
+  // Update metadata (companies were already pushed incrementally above)
   if (!isDryRun && validResults.length > 0) {
     try {
       console.log('\n' + '='.repeat(70));
-      await pushAllCompanies(validResults);
+      await updateMetadata(validResults.length);
       console.log('='.repeat(70));
     } catch (error) {
-      console.error('\nFailed to push to Firebase:', error.message);
+      console.error('\nFailed to update metadata:', error.message);
       process.exit(1);
     }
   } else if (isDryRun) {

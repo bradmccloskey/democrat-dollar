@@ -118,15 +118,11 @@ class CandidateViewModel {
                     return
                 }
 
-                do {
-                    self.candidates = try documents.compactMap { document in
-                        try document.data(as: Candidate.self)
-                    }
-                    self.isLoading = false
-                } catch {
-                    self.errorMessage = "Failed to parse candidates: \(error.localizedDescription)"
-                    self.isLoading = false
+                self.candidates = documents.compactMap { document in
+                    try? document.data(as: Candidate.self)
                 }
+                self.errorMessage = nil
+                self.isLoading = false
             }
     }
 
