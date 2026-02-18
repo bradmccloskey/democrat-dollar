@@ -8,9 +8,6 @@ updater/firebase-service-account.json
 updater/service-account.json
 **/service-account*.json
 
-# Firebase client config (contains API key — safe but triggers secret scanners)
-app/DemocratDollar/GoogleService-Info.plist
-
 # Logs
 updater/logs/*.log
 
