@@ -17,7 +17,8 @@ import {
 import {
   initFirebase,
   pushCompany,
-  updateMetadata
+  updateMetadata,
+  cleanupStaleCompanies
 } from './firebase-push.js';
 
 dotenv.config();
@@ -171,6 +172,7 @@ async function main() {
 
   // Process all companies
   const results = [];
+  const pushedIds = new Set(); // Track IDs for stale cleanup
   let successCount = 0;
   let noPacCount = 0;
   let fatalErrorCount = 0;
@@ -199,7 +201,8 @@ async function main() {
     // Push each company to Firebase immediately so live app gets data incrementally
     if (!isDryRun && !result.error && result.category !== 'error') {
       try {
-        await pushCompany(result);
+        const companyId = await pushCompany(result);
+        pushedIds.add(companyId);
       } catch (pushError) {
         console.error(`  Failed to push ${companyName} to Firebase:`, pushError.message);
       }
@@ -256,6 +259,15 @@ async function main() {
     try {
       console.log('\n' + '='.repeat(70));
       await updateMetadata(validResults.length);
+
+      // Clean up stale company documents from previous runs
+      // Only when processing ALL companies (not single company mode, not rate-limited)
+      if (!specificCompany && !rateLimitHit && pushedIds.size > 0) {
+        const staleCount = await cleanupStaleCompanies(pushedIds);
+        if (staleCount > 0) {
+          console.log(`Cleaned up ${staleCount} stale company documents`);
+        }
+      }
       console.log('='.repeat(70));
     } catch (error) {
       console.error('\nFailed to update metadata:', error.message);

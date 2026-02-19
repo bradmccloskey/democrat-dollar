@@ -63,7 +63,7 @@ struct CandidateListView: View {
 
                 // Candidate list
                 Section {
-                    ForEach(viewModel.filteredCandidates) { candidate in
+                    ForEach(viewModel.filteredCandidates, id: \.stableId) { candidate in
                         NavigationLink(destination: CandidateDetailView(candidate: candidate)) {
                             CandidateRowView(candidate: candidate)
                         }

@@ -340,15 +340,6 @@
     "industry": "Tech"
   },
   {
-    "name": "Cigna Group",
-    "rank": 37,
-    "searchTerms": [
-      "CIGNA GROUP"
-    ],
-    "committeeId": null,
-    "industry": "Healthcare"
-  },
-  {
     "name": "Target",
     "rank": 38,
     "searchTerms": [
@@ -1989,15 +1980,6 @@
     "industry": "Tech"
   },
   {
-    "name": "Centene Corporation",
-    "rank": 217,
-    "searchTerms": [
-      "CENTENE CORPORATION"
-    ],
-    "committeeId": null,
-    "industry": "Healthcare"
-  },
-  {
     "name": "Fidelity National Financial",
     "rank": 218,
     "searchTerms": [
@@ -2154,15 +2136,6 @@
     "industry": "Materials"
   },
   {
-    "name": "CoreCivic Inc",
-    "rank": 235,
-    "searchTerms": [
-      "CORECIVIC INC"
-    ],
-    "committeeId": null,
-    "industry": "Industrial"
-  },
-  {
     "name": "Gap Inc",
     "rank": 236,
     "searchTerms": [
@@ -2243,15 +2216,6 @@
     ],
     "committeeId": null,
     "industry": "Energy"
-  },
-  {
-    "name": "Genuine Parts Company",
-    "rank": 245,
-    "searchTerms": [
-      "GENUINE PARTS COMPANY"
-    ],
-    "committeeId": null,
-    "industry": "Automotive"
   },
   {
     "name": "Iron Mountain",
@@ -2472,15 +2436,6 @@
     ],
     "committeeId": null,
     "industry": "Pharma"
-  },
-  {
-    "name": "Caesars Entertainment Inc",
-    "rank": 270,
-    "searchTerms": [
-      "CAESARS ENTERTAINMENT INC"
-    ],
-    "committeeId": null,
-    "industry": "Hospitality"
   },
   {
     "name": "Fifth Third",
@@ -2846,15 +2801,6 @@
     "industry": "Tech"
   },
   {
-    "name": "Nike Inc",
-    "rank": 311,
-    "searchTerms": [
-      "NIKE INC"
-    ],
-    "committeeId": null,
-    "industry": "Retail"
-  },
-  {
     "name": "Ameriprise",
     "rank": 312,
     "searchTerms": [
@@ -2918,15 +2864,6 @@
     "industry": "Healthcare"
   },
   {
-    "name": "Dollar Tree Inc",
-    "rank": 319,
-    "searchTerms": [
-      "DOLLAR TREE INC"
-    ],
-    "committeeId": null,
-    "industry": "Retail"
-  },
-  {
     "name": "T. Rowe Price",
     "rank": 320,
     "searchTerms": [
@@ -2979,15 +2916,6 @@
     ],
     "committeeId": null,
     "industry": "Energy"
-  },
-  {
-    "name": "Ross Stores Inc",
-    "rank": 326,
-    "searchTerms": [
-      "ROSS STORES INC"
-    ],
-    "committeeId": null,
-    "industry": "Retail"
   },
   {
     "name": "Autodesk",
@@ -3097,15 +3025,6 @@
     ],
     "committeeId": null,
     "industry": "Real Estate"
-  },
-  {
-    "name": "ConocoPhillips Company",
-    "rank": 339,
-    "searchTerms": [
-      "CONOCOPHILLIPS COMPANY"
-    ],
-    "committeeId": null,
-    "industry": "Energy"
   },
   {
     "name": "Newell Brands",
@@ -3234,15 +3153,6 @@
     "industry": "Insurance"
   },
   {
-    "name": "McKesson Corporation",
-    "rank": 354,
-    "searchTerms": [
-      "MCKESSON CORPORATION"
-    ],
-    "committeeId": null,
-    "industry": "Healthcare"
-  },
-  {
     "name": "Regions Financial",
     "rank": 355,
     "searchTerms": [
@@ -3304,15 +3214,6 @@
     ],
     "committeeId": null,
     "industry": "Finance"
-  },
-  {
-    "name": "Principal Financial Group",
-    "rank": 362,
-    "searchTerms": [
-      "PRINCIPAL FINANCIAL GROUP"
-    ],
-    "committeeId": null,
-    "industry": "Insurance"
   },
   {
     "name": "Rockwell Automation",
@@ -3612,15 +3513,6 @@
     "industry": "Utilities"
   },
   {
-    "name": "Huntsman Corporation",
-    "rank": 396,
-    "searchTerms": [
-      "HUNTSMAN CORPORATION"
-    ],
-    "committeeId": null,
-    "industry": "Chemicals"
-  },
-  {
     "name": "Domino's Pizza",
     "rank": 397,
     "searchTerms": [
@@ -3629,15 +3521,6 @@
     ],
     "committeeId": null,
     "industry": "Food & Beverage"
-  },
-  {
-    "name": "Alliant Energy Corp",
-    "rank": 398,
-    "searchTerms": [
-      "ALLIANT ENERGY CORP"
-    ],
-    "committeeId": null,
-    "industry": "Utilities"
   },
   {
     "name": "AvalonBay",
@@ -3685,15 +3568,6 @@
     "industry": "Chemicals"
   },
   {
-    "name": "Lennar Corporation",
-    "rank": 404,
-    "searchTerms": [
-      "LENNAR CORPORATION"
-    ],
-    "committeeId": null,
-    "industry": "Real Estate"
-  },
-  {
     "name": "Western Digital",
     "rank": 405,
     "searchTerms": [
@@ -3728,15 +3602,6 @@
     ],
     "committeeId": null,
     "industry": "Retail"
-  },
-  {
-    "name": "Centene Corp",
-    "rank": 409,
-    "searchTerms": [
-      "CENTENE CORP"
-    ],
-    "committeeId": null,
-    "industry": "Healthcare"
   },
   {
     "name": "WESCO International",
@@ -3782,15 +3647,6 @@
     ],
     "committeeId": null,
     "industry": "Hospitality"
-  },
-  {
-    "name": "FirstEnergy Corp",
-    "rank": 415,
-    "searchTerms": [
-      "FIRSTENERGY CORP"
-    ],
-    "committeeId": null,
-    "industry": "Utilities"
   },
   {
     "name": "Packaging Corp of America",
@@ -4192,24 +4048,6 @@
     "industry": "Retail"
   },
   {
-    "name": "Packaging Corporation of America",
-    "rank": 460,
-    "searchTerms": [
-      "PACKAGING CORPORATION OF AMERICA"
-    ],
-    "committeeId": null,
-    "industry": "Materials"
-  },
-  {
-    "name": "Unum",
-    "rank": 461,
-    "searchTerms": [
-      "UNUM"
-    ],
-    "committeeId": null,
-    "industry": "Insurance"
-  },
-  {
     "name": "Thomson Reuters",
     "rank": 462,
     "searchTerms": [
@@ -4226,24 +4064,6 @@
     ],
     "committeeId": null,
     "industry": "Finance"
-  },
-  {
-    "name": "Northrop Grumman Corp",
-    "rank": 464,
-    "searchTerms": [
-      "NORTHROP GRUMMAN CORP"
-    ],
-    "committeeId": null,
-    "industry": "Aerospace & Defense"
-  },
-  {
-    "name": "DR Horton",
-    "rank": 465,
-    "searchTerms": [
-      "DR HORTON"
-    ],
-    "committeeId": null,
-    "industry": "Real Estate"
   },
   {
     "name": "Seagate Technology",
@@ -4273,15 +4093,6 @@
     "industry": "Tech"
   },
   {
-    "name": "MGM Resorts International",
-    "rank": 469,
-    "searchTerms": [
-      "MGM RESORTS INTERNATIONAL"
-    ],
-    "committeeId": null,
-    "industry": "Hospitality"
-  },
-  {
     "name": "Interpublic Group",
     "rank": 470,
     "searchTerms": [
@@ -4307,15 +4118,6 @@
     ],
     "committeeId": null,
     "industry": "Real Estate"
-  },
-  {
-    "name": "Lamb Weston Holdings",
-    "rank": 473,
-    "searchTerms": [
-      "LAMB WESTON HOLDINGS"
-    ],
-    "committeeId": null,
-    "industry": "Food & Beverage"
   },
   {
     "name": "Chipotle Mexican Grill",
@@ -4382,15 +4184,6 @@
     "industry": "Media"
   },
   {
-    "name": "Sysco Corporation",
-    "rank": 481,
-    "searchTerms": [
-      "SYSCO CORPORATION"
-    ],
-    "committeeId": null,
-    "industry": "Food & Beverage"
-  },
-  {
     "name": "Cintas",
     "rank": 482,
     "searchTerms": [
@@ -4455,15 +4248,6 @@
     "industry": "Entertainment"
   },
   {
-    "name": "Lenovo Group",
-    "rank": 489,
-    "searchTerms": [
-      "LENOVO GROUP"
-    ],
-    "committeeId": null,
-    "industry": "Tech"
-  },
-  {
     "name": "Hershey",
     "rank": 490,
     "searchTerms": [
@@ -4491,15 +4275,6 @@
     "industry": "Real Estate"
   },
   {
-    "name": "BlackRock Group",
-    "rank": 493,
-    "searchTerms": [
-      "BLACKROCK GROUP"
-    ],
-    "committeeId": null,
-    "industry": "Finance"
-  },
-  {
     "name": "Microchip Technology",
     "rank": 494,
     "searchTerms": [
@@ -4516,15 +4291,6 @@
     ],
     "committeeId": null,
     "industry": "Automotive"
-  },
-  {
-    "name": "Cheniere Energy Inc",
-    "rank": 496,
-    "searchTerms": [
-      "CHENIERE ENERGY INC"
-    ],
-    "committeeId": null,
-    "industry": "Energy"
   },
   {
     "name": "Welltower",

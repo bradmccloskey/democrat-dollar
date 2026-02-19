@@ -64,6 +64,9 @@ struct Candidate: Identifiable, Codable {
     var committeeId: String?
     var lastUpdated: Date?
 
+    /// Stable identity for SwiftUI ForEach — falls back to candidateId when @DocumentID is nil
+    var stableId: String { id ?? candidateId }
+
     enum CodingKeys: String, CodingKey {
         case candidateId, name, party, office, officeCode
         case district, state, incumbentChallenger

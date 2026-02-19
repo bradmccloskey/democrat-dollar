@@ -50,6 +50,9 @@ struct Company: Identifiable, Codable {
     var rank: Int?
     var hasPac: Bool?
 
+    /// Stable identity for SwiftUI ForEach — falls back to name when @DocumentID is nil
+    var stableId: String { id ?? name }
+
     enum CodingKeys: String, CodingKey {
         case name, industry, totalDemocrat, totalRepublican
         case percentDemocrat, percentRepublican, category

@@ -8,6 +8,8 @@
     "update": "node src/index.js",
     "update-candidates": "node src/update-candidates.js",
     "update-all": "bash run-update.sh",
+    "audit": "node src/audit.js",
+    "audit-fix": "node src/audit.js --fix",
     "test": "vitest run",
     "test-candidates": "node src/update-candidates.js --dry-run",
     "test-company": "node src/index.js --dry-run --company",

@@ -60,7 +60,7 @@ struct CompanyListView: View {
                 }
 
                 Section {
-                    ForEach(companies) { company in
+                    ForEach(companies, id: \.stableId) { company in
                         NavigationLink(destination: CompanyDetailView(company: company)) {
                             CompanyRowView(company: company)
                         }

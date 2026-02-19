@@ -33,6 +33,7 @@
 		DD0002052C0000000000 /* CompanyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002022C0000000000 /* CompanyDecodingTests.swift */; };
 		DD0002062C0000000000 /* CandidateDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002032C0000000000 /* CandidateDecodingTests.swift */; };
 		DD0002072C0000000000 /* FormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002042C0000000000 /* FormatterTests.swift */; };
+		DD0002152C0000000000 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002162C0000000000 /* ViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		DD0002032C0000000000 /* CandidateDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateDecodingTests.swift; sourceTree = "<group>"; };
 		DD0002042C0000000000 /* FormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTests.swift; sourceTree = "<group>"; };
 		DD0002122C0000000000 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		DD0002162C0000000000 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				DD0002022C0000000000 /* CompanyDecodingTests.swift */,
 				DD0002032C0000000000 /* CandidateDecodingTests.swift */,
 				DD0002042C0000000000 /* FormatterTests.swift */,
+				DD0002162C0000000000 /* ViewModelTests.swift */,
 			);
 			path = DemocratDollarTests;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				DD0002052C0000000000 /* CompanyDecodingTests.swift in Sources */,
 				DD0002062C0000000000 /* CandidateDecodingTests.swift in Sources */,
 				DD0002072C0000000000 /* FormatterTests.swift in Sources */,
+				DD0002152C0000000000 /* ViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

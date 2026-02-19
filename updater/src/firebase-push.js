@@ -42,12 +42,17 @@ export function initFirebase() {
 }
 
 /**
- * Convert company name to a URL-friendly slug
+ * Convert company name to a URL-friendly slug.
+ * Strips common corporate suffixes (Inc, Corp, LLC, etc.) before slugifying
+ * so that "D.R. Horton Inc" and "D.R. Horton" produce the same slug.
  */
-function slugify(text) {
+export function slugify(text) {
   return text
     .toString()
     .toLowerCase()
+    .trim()
+    // Strip common corporate suffixes
+    .replace(/\b(inc\.?|corp\.?|corporation|llc|llp|co\.?|company|group|holdings?|enterprises?|international|intl\.?|ltd\.?|plc|n\.?a\.?|& co\.?)\s*$/i, '')
     .trim()
     .replace(/\s+/g, '-')
     .replace(/&/g, '-and-')
@@ -55,6 +60,19 @@ function slugify(text) {
     .replace(/\-\-+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
+}
+
+/**
+ * Normalize a company name for dedup comparison.
+ * More aggressive than slugify — strips ALL corporate suffixes and punctuation.
+ */
+export function normalizeName(name) {
+  return name
+    .toLowerCase()
+    .replace(/[.,'"]/g, '')
+    .replace(/\b(inc|corp|corporation|llc|llp|co|company|group|holdings?|enterprises?|international|intl|ltd|plc|the)\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /**
@@ -492,6 +510,61 @@ export async function getCompaniesByIndustry(industry) {
     .get();
 
   return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}
+
+/**
+ * Get all existing company document IDs from Firestore.
+ */
+export async function getAllCompanyIds() {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  const snapshot = await db.collection('companies').get();
+  return new Set(snapshot.docs.map(doc => doc.id));
+}
+
+/**
+ * Delete stale company documents that weren't pushed in the current pipeline run.
+ * @param {Set<string>} pushedIds - IDs of companies successfully pushed this run
+ */
+export async function cleanupStaleCompanies(pushedIds) {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initFirebase() first.');
+  }
+
+  const existingIds = await getAllCompanyIds();
+  const staleIds = [...existingIds].filter(id => !pushedIds.has(id));
+
+  if (staleIds.length === 0) {
+    console.log('No stale company documents to clean up.');
+    return 0;
+  }
+
+  console.log(`\nCleaning up ${staleIds.length} stale company documents...`);
+
+  const BATCH_SIZE = 500;
+  let batch = db.batch();
+  let operationCount = 0;
+
+  for (const oldId of staleIds) {
+    batch.delete(db.collection('companies').doc(oldId));
+    operationCount++;
+    console.log(`  Deleting stale company: ${oldId}`);
+
+    if (operationCount >= BATCH_SIZE) {
+      await batch.commit();
+      batch = db.batch();
+      operationCount = 0;
+    }
+  }
+
+  if (operationCount > 0) {
+    await batch.commit();
+  }
+
+  console.log(`Deleted ${staleIds.length} stale company documents.`);
+  return staleIds.length;
 }
 
 // Test exports — pure functions with no Firebase/network dependencies
