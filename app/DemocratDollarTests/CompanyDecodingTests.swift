@@ -6,6 +6,7 @@ final class CompanyDecodingTests: XCTestCase {
     func testDecodeValidCompany() throws {
         let json: [String: Any] = [
             "name": "Walmart",
+            "slug": "walmart",
             "industry": "Retail",
             "totalDemocrat": 232750.0,
             "totalRepublican": 635750.0,
@@ -23,6 +24,7 @@ final class CompanyDecodingTests: XCTestCase {
 
         let company = try decoder.decode(Company.self, from: data)
         XCTAssertEqual(company.name, "Walmart")
+        XCTAssertEqual(company.slug, "walmart")
         XCTAssertEqual(company.industry, "Retail")
         XCTAssertEqual(company.totalDemocrat, 232750.0)
         XCTAssertEqual(company.totalRepublican, 635750.0)

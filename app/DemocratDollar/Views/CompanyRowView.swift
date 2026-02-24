@@ -68,6 +68,7 @@ struct CompanyRowView: View {
         CompanyRowView(company: Company(
             id: "1",
             name: "Apple Inc.",
+            slug: "apple",
             industry: "Technology",
             totalDemocrat: 500000,
             totalRepublican: 200000,
@@ -81,6 +82,7 @@ struct CompanyRowView: View {
         CompanyRowView(company: Company(
             id: "2",
             name: "Tesla",
+            slug: "tesla",
             industry: "Automotive",
             totalDemocrat: 0,
             totalRepublican: 0,

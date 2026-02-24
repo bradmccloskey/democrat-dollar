@@ -84,6 +84,7 @@ final class ViewModelTests: XCTestCase {
     ) -> Company {
         Company(
             name: name,
+            slug: name.lowercased(),
             industry: "Test",
             totalDemocrat: percentDem * 1000,
             totalRepublican: percentRep * 1000,

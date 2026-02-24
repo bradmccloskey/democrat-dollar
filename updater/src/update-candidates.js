@@ -201,6 +201,8 @@ async function main() {
 
 /**
  * Process a list of FEC candidates (fetch committees, contributions, aggregate).
+ * Post-processing deduplicates by name as a safety net — if the same person
+ * still appears with different FEC IDs, keep the one with the highest totalRaised.
  */
 async function processCandidateList(fecCandidates) {
   const results = [];
@@ -215,7 +217,26 @@ async function processCandidateList(fecCandidates) {
     }
   }
 
-  return results;
+  // Deduplicate processed results by normalized name (safety net)
+  const byName = new Map();
+  for (const r of results) {
+    const key = (r.name || '').toUpperCase().trim();
+    if (!byName.has(key)) {
+      byName.set(key, r);
+    } else {
+      const existing = byName.get(key);
+      if ((r.totalRaised || 0) > (existing.totalRaised || 0)) {
+        byName.set(key, r);
+      }
+    }
+  }
+
+  const deduped = Array.from(byName.values());
+  if (deduped.length < results.length) {
+    console.log(`  Post-processing dedup: ${results.length} → ${deduped.length} (removed ${results.length - deduped.length} name duplicates)`);
+  }
+
+  return deduped;
 }
 
 function printSummary(totalPushed, stateCounts = {}) {

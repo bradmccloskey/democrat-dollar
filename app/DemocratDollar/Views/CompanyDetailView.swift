@@ -194,6 +194,7 @@ struct DonationRow: View {
         CompanyDetailView(company: Company(
             id: "1",
             name: "Apple Inc.",
+            slug: "apple",
             industry: "Technology",
             totalDemocrat: 750000,
             totalRepublican: 250000,

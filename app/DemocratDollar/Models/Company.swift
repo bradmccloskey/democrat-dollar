@@ -39,6 +39,7 @@ enum PoliticalCategory: String, Codable, CaseIterable {
 struct Company: Identifiable, Codable {
     @DocumentID var id: String?
     var name: String
+    var slug: String?
     var industry: String
     var totalDemocrat: Double
     var totalRepublican: Double
@@ -50,11 +51,11 @@ struct Company: Identifiable, Codable {
     var rank: Int?
     var hasPac: Bool?
 
-    /// Stable identity for SwiftUI ForEach — falls back to name when @DocumentID is nil
-    var stableId: String { id ?? name }
+    /// Stable identity for SwiftUI ForEach — slug is always unique (equals Firestore doc ID)
+    var stableId: String { slug ?? id ?? name }
 
     enum CodingKeys: String, CodingKey {
-        case name, industry, totalDemocrat, totalRepublican
+        case name, slug, industry, totalDemocrat, totalRepublican
         case percentDemocrat, percentRepublican, category
         case lastUpdated, fecCommitteeIds, rank, hasPac
     }

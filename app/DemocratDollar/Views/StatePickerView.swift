@@ -83,7 +83,6 @@ struct StatePickerView: View {
                                 }
                             }
                         }
-                        .disabled(!hasData)
                     }
                 }
             }

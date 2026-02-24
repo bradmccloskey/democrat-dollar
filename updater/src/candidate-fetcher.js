@@ -53,6 +53,47 @@ async function searchFederalCandidates(office, state = null, district = null) {
 }
 
 /**
+ * Normalize a candidate name for deduplication comparison.
+ * Strips suffixes (Jr, Sr, III), titles, and normalizes whitespace.
+ */
+function normalizeCandidateName(name) {
+  return (name || '')
+    .toUpperCase()
+    .replace(/,/g, ' ')
+    .replace(/\b(JR|SR|III|II|IV|MR|MRS|MS|DR|HON|REV|SEN|REP)\b\.?/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Deduplicate candidates by normalized name.
+ * When the same person appears multiple times (different FEC IDs from different
+ * cycles/offices), keep the one with the most recent election cycle.
+ */
+function deduplicateByName(candidates) {
+  const byName = new Map();
+
+  for (const c of candidates) {
+    const key = normalizeCandidateName(c.name);
+    if (!byName.has(key)) {
+      byName.set(key, c);
+    } else {
+      const existing = byName.get(key);
+      // Prefer the candidate with the most recent cycle
+      const existingCycles = existing.cycles || [];
+      const currentCycles = c.cycles || [];
+      const existingMax = existingCycles.length > 0 ? Math.max(...existingCycles) : 0;
+      const currentMax = currentCycles.length > 0 ? Math.max(...currentCycles) : 0;
+      if (currentMax > existingMax) {
+        byName.set(key, c);
+      }
+    }
+  }
+
+  return Array.from(byName.values());
+}
+
+/**
  * Fetch all candidates for a single state (Senate + all House districts).
  */
 export async function fetchCandidatesForState(stateCode) {
@@ -85,8 +126,16 @@ export async function fetchCandidatesForState(stateCode) {
     addUnique(houseCandidates);
   }
 
-  console.log(`  Total unique candidates for ${stateCode}: ${allCandidates.length}`);
-  return allCandidates;
+  console.log(`  Total unique candidates (by ID) for ${stateCode}: ${allCandidates.length}`);
+
+  // Deduplicate by normalized name — same person may have multiple FEC IDs
+  // (different cycles/offices). Keep the one with the most recent cycle.
+  const deduped = deduplicateByName(allCandidates);
+  if (deduped.length < allCandidates.length) {
+    console.log(`  Deduplicated by name: ${allCandidates.length} → ${deduped.length} (removed ${allCandidates.length - deduped.length} duplicates)`);
+  }
+
+  return deduped;
 }
 
 /**

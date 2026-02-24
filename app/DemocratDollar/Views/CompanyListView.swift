@@ -133,6 +133,7 @@ struct CompanyListView: View {
                 Company(
                     id: "1",
                     name: "Apple Inc.",
+                    slug: "apple",
                     industry: "Technology",
                     totalDemocrat: 750000,
                     totalRepublican: 250000,
@@ -145,6 +146,7 @@ struct CompanyListView: View {
                 Company(
                     id: "2",
                     name: "ExxonMobil",
+                    slug: "exxonmobil",
                     industry: "Energy",
                     totalDemocrat: 200000,
                     totalRepublican: 800000,
