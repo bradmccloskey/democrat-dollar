@@ -1,0 +1,16 @@
+{
+  "completedStates": [
+    "_presidential",
+    "AL",
+    "AK",
+    "AZ",
+    "AR"
+  ],
+  "startedAt": "2026-03-23T11:25:55.206Z",
+  "stateCounts": {
+    "AL": 77,
+    "AK": 16,
+    "AZ": 130,
+    "AR": 38
+  }
+}
